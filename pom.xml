@@ -9,6 +9,25 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
-        <exec.mainClass>Algoritmos_de_Ordenacao_LEDAUEPB</exec.mainClass>
+        <exec.mainClass>Main</exec.mainClass>
+        <!-- Adicione a versão do plugin maven-jar-plugin -->
+        <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
     </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <!-- Adicione a versão do plugin maven-jar-plugin -->
+                <version>${maven-jar-plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
