@@ -9,6 +9,11 @@
 #### Tecnologias Utilizadas
 * *JAVA _version "19.0.1" 2022-10-18_*
 
+## Informações de como execultar o programa.
+* Baixe o repositório raiz do projeto
+* Insira o arquivo xxxx na pasta src/main/java/ArquivoBaseCSV
+* Execute a aplicação pela classe Main
+
 ##
 ## Informações gerais do Projeto da Disciplina
 
