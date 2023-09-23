@@ -9,11 +9,13 @@
 #### Tecnologias Utilizadas
 * *JAVA _version "19.0.1" 2022-10-18_*
 
-## Informações de como execultar o programa.
-* Baixe o repositório raiz do projeto.
-* Insira o arquivo **passwords.csv** na pasta src/main/java/ArquivoBaseCSV
-  * Sem esse arquivo o programa não irá realizar o porcesso de criação/ordenação das informações. 
-* Execute a aplicação pela classe Main.
+## **Como execultar o programa?**
+* Insira o arquivo (**passwords.csv**) no diretório do projeto: src/main/java/**ArquivoBaseCSV**.
+* Sem esse arquivo, o programa não irá seguir as tarefas de criação/ordenação dos arquivos.
+* Execute a classe **Main** que está na pasta /src/main/**java**.
+* Para parar o processo click no botão **Encerrar processo**.
+* Após concluir todo o processo, o click no botão **Gerar Relatório**, e uma janela deverá mostrar o relatório pronto.
+
 
 ##
 ## Informações gerais do Projeto da Disciplina
