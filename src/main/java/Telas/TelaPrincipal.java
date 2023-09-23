@@ -35,6 +35,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
     public TelaPrincipal(){
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
     }
     
     private void initComponents() {
@@ -62,7 +63,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
         jMenuItem9 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Arthur FMS - Laboratório de Estrutura de Dados - LEDA");
+        setTitle("Arthur Felipe MS - LEDA");
 
         PainelPrincipal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -132,7 +133,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("Projeto");
+        jMenu1.setText("Menu");
 
         jMenu3.setText("Informações");
 

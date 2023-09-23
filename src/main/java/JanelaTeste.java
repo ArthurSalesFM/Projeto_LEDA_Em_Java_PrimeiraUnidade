@@ -9,6 +9,8 @@ public class JanelaTeste extends javax.swing.JFrame {
      */
     public JanelaTeste() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     /**
@@ -28,22 +30,24 @@ public class JanelaTeste extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         SaidaInformacoes = new javax.swing.JTextPane();
         MenuPrincipal = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        MenuGeralProjeto = new javax.swing.JMenu();
+        Informacoes = new javax.swing.JMenu();
+        InfoGeral = new javax.swing.JMenuItem();
+        ProjetoPasswords = new javax.swing.JMenuItem();
+        SobreOAutor = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        Algoritmos = new javax.swing.JMenu();
+        MenuCountingSort = new javax.swing.JMenuItem();
+        MenuHeapSort = new javax.swing.JMenuItem();
+        MenuInsertionSort = new javax.swing.JMenuItem();
+        MenuMergeSort = new javax.swing.JMenuItem();
+        MenuQScMedianade3 = new javax.swing.JMenuItem();
+        MenuQuickSort = new javax.swing.JMenuItem();
+        MenuSelectionSort = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Arthur FMS - Laboratório de Estrutura de Dados - LEDA");
+        setResizable(false);
 
         PainelPrincipal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -113,55 +117,65 @@ public class JanelaTeste extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("Projeto");
+        MenuPrincipal.setToolTipText("AAAAA");
 
-        jMenu3.setText("Informações");
+        MenuGeralProjeto.setText("Projeto");
 
-        jMenuItem2.setText("Gerais");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        Informacoes.setText("Informações");
+
+        InfoGeral.setText("Gerais");
+        InfoGeral.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                InfoGeralActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem2);
+        Informacoes.add(InfoGeral);
 
-        jMenuItem3.setText("Projeto (Passwords)");
-        jMenu3.add(jMenuItem3);
+        ProjetoPasswords.setText("Projeto (Passwords)");
+        Informacoes.add(ProjetoPasswords);
 
-        jMenu1.add(jMenu3);
-        jMenu1.add(jSeparator1);
-
-        jMenu4.setText("Algorítmos");
-
-        jMenuItem1.setText("Counting Sort");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        SobreOAutor.setText("Sobre o Autor");
+        SobreOAutor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                SobreOAutorActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem1);
+        Informacoes.add(SobreOAutor);
 
-        jMenuItem4.setText("Heap Sort");
-        jMenu4.add(jMenuItem4);
+        MenuGeralProjeto.add(Informacoes);
+        MenuGeralProjeto.add(jSeparator1);
 
-        jMenuItem5.setText("Insertion Sort");
-        jMenu4.add(jMenuItem5);
+        Algoritmos.setText("Algorítmos");
 
-        jMenuItem6.setText("Merge Sort");
-        jMenu4.add(jMenuItem6);
+        MenuCountingSort.setText("Counting Sort");
+        MenuCountingSort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuCountingSortActionPerformed(evt);
+            }
+        });
+        Algoritmos.add(MenuCountingSort);
 
-        jMenuItem7.setText("Q.S c/ Mediana de 3");
-        jMenu4.add(jMenuItem7);
+        MenuHeapSort.setText("Heap Sort");
+        Algoritmos.add(MenuHeapSort);
 
-        jMenuItem8.setText("Quick Sort");
-        jMenu4.add(jMenuItem8);
+        MenuInsertionSort.setText("Insertion Sort");
+        Algoritmos.add(MenuInsertionSort);
 
-        jMenuItem9.setText("Selection Sort");
-        jMenu4.add(jMenuItem9);
+        MenuMergeSort.setText("Merge Sort");
+        Algoritmos.add(MenuMergeSort);
 
-        jMenu1.add(jMenu4);
+        MenuQScMedianade3.setText("Q.S c/ Mediana de 3");
+        Algoritmos.add(MenuQScMedianade3);
 
-        MenuPrincipal.add(jMenu1);
+        MenuQuickSort.setText("Quick Sort");
+        Algoritmos.add(MenuQuickSort);
+
+        MenuSelectionSort.setText("Selection Sort");
+        Algoritmos.add(MenuSelectionSort);
+
+        MenuGeralProjeto.add(Algoritmos);
+
+        MenuPrincipal.add(MenuGeralProjeto);
 
         setJMenuBar(MenuPrincipal);
 
@@ -185,13 +199,13 @@ public class JanelaTeste extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void InfoGeralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfoGeralActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_InfoGeralActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void MenuCountingSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCountingSortActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_MenuCountingSortActionPerformed
 
     private void CancelarProcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarProcessoActionPerformed
         // TODO add your handling code here:
@@ -201,25 +215,30 @@ public class JanelaTeste extends javax.swing.JFrame {
         
     }//GEN-LAST:event_BotaoIniciarActionPerformed
 
+    private void SobreOAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SobreOAutorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SobreOAutorActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Algoritmos;
     private javax.swing.JButton BotaoIniciar;
     private javax.swing.JButton CancelarProcesso;
     private javax.swing.JButton GerarRelatorio;
+    private javax.swing.JMenuItem InfoGeral;
+    private javax.swing.JMenu Informacoes;
+    private javax.swing.JMenuItem MenuCountingSort;
+    private javax.swing.JMenu MenuGeralProjeto;
+    private javax.swing.JMenuItem MenuHeapSort;
+    private javax.swing.JMenuItem MenuInsertionSort;
+    private javax.swing.JMenuItem MenuMergeSort;
     private javax.swing.JMenuBar MenuPrincipal;
+    private javax.swing.JMenuItem MenuQScMedianade3;
+    private javax.swing.JMenuItem MenuQuickSort;
+    private javax.swing.JMenuItem MenuSelectionSort;
     private javax.swing.JPanel PainelPrincipal;
+    private javax.swing.JMenuItem ProjetoPasswords;
     private javax.swing.JTextPane SaidaInformacoes;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem SobreOAutor;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
