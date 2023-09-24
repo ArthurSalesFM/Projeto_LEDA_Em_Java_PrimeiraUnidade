@@ -31,17 +31,16 @@ public class ArquivoCSV {
         catch (IOException e) {
             e.printStackTrace();
         }
-
-    // Converter a lista em um vetor de strings
-    String[] vetorDeLinhas = linhas.toArray(new String[0]);
-    return vetorDeLinhas;
+        
+        String[] vetorDeLinhas = linhas.toArray(new String[0]);
+        return vetorDeLinhas;
 }
      
      public void criarArquivoCSV(String nomeDoArquivo, String[] conteudo) {
         String csvFilePath = "src/main/java/ArquivoBaseCSV/" + nomeDoArquivo;
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(csvFilePath))) {
-            
+
             for (String linha : conteudo) {
                 bw.write(linha);
                 bw.newLine();
@@ -49,18 +48,9 @@ public class ArquivoCSV {
             System.out.println("Arquivo CSV criado com sucesso: " + csvFilePath);
         } 
         catch (IOException e) {
+            System.err.println("Erro ao criar o arquivo CSV: " + e.getMessage());
             e.printStackTrace();
-        }
-    }
-     
-    public void imprimeArray(String array[]){
-        
-        for(int x = 0; x < array.length; x++){
-            System.out.println("Linhas: " + array[x]);
         }
     }
     
 }
-        
-        
-

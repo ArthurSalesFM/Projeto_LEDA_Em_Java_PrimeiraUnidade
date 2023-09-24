@@ -1,6 +1,8 @@
 AlgoritmosDeOrdenação\QuickSort_Com_MedianaDe3.class
+Classificações_Transformações\ClassificacaoSenha.class
 JanelaTeste$1.class
 JanelaTeste$3.class
+Classificações_Transformações\Transformacoes.class
 CSV\ArquivoCSV.class
 Main$1.class
 Telas\TelaPrincipal$2.class
@@ -8,8 +10,8 @@ JanelaTeste$5.class
 Main.class
 Telas\TelaPrincipal$3.class
 Interfaces\I_Ordenacao.class
-Transformacoes\TransformacoesCSV.class
 JanelaTeste.class
+Telas\TelaPrincipal$5.class
 JanelaTeste$2.class
 AlgoritmosDeOrdenação\CountingSort.class
 AlgoritmosDeOrdenação\QuickSort.class

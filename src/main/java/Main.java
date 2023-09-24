@@ -1,4 +1,7 @@
 
+import Telas.TelaPrincipal;
+
+
 /**
  *
  * @author Arthur Felipe MS
@@ -9,8 +12,8 @@ public class Main {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
-            new JanelaTeste().setVisible(true);
-            //Mudar depois para TelaPrincipal
+            new TelaPrincipal().setVisible(true);
+            //Mudar depois para TelaPrincipal || JanelaTeste para testes
         }
         });
     }

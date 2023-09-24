@@ -1,8 +1,10 @@
 
 package Telas;
 import CSV.ArquivoCSV;
-import java.io.File;
-import javax.swing.JOptionPane;
+import Classificações_Transformações.ClassificacaoSenha;
+import Classificações_Transformações.Transformacoes;
+import javax.swing.SwingWorker;
+import javax.swing.text.Document;
 
 /**
  *
@@ -10,6 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class TelaPrincipal extends javax.swing.JFrame{
     
+    private StringBuilder texto; // Declaração da variável texto
     private javax.swing.JButton BotaoIniciar;
     private javax.swing.JButton CancelarProcesso;
     private javax.swing.JButton GerarRelatorio;
@@ -63,7 +66,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
         jMenuItem9 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Arthur Felipe MS - LEDA");
+        setTitle("Arthurr Felipee MS - LEDA");
 
         PainelPrincipal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -218,29 +221,63 @@ public class TelaPrincipal extends javax.swing.JFrame{
     }                                                
 
     private void BotaoIniciarActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        ArquivoCSV ar = new ArquivoCSV();
-    StringBuilder texto = new StringBuilder();
-    String nomeDoArquivo = "passwords.csv"; // Nome do arquivo a ser lido
-    
-    // Verifica se o arquivo existe
-    if (!new File("src/main/java/ArquivoBaseCSV/" + nomeDoArquivo).exists()) {
-        JOptionPane.showMessageDialog(this, "O arquivo " + nomeDoArquivo + " não foi encontrado.", "Erro", JOptionPane.ERROR_MESSAGE);
-        return; // Sai do método se o arquivo não existir
-    }
-    
-    texto.append("Iniciando o Processo...\n"); 
-    SaidaInformacoes.setText(texto.toString());
-    
-    String saidas[] = ar.lerArquivoCSV(nomeDoArquivo);       
-    
-    texto.append("Criando o Arquivo teste...\n");
-    // Defina o texto na caixa de texto SaidaInformacoes
-    SaidaInformacoes.setText(texto.toString());        
-    
-    nomeDoArquivo = "teste.csv";
-    ar.criarArquivoCSV(nomeDoArquivo, saidas);
-    texto.append("Arquivo "+ nomeDoArquivo + " criado...\n");
-    SaidaInformacoes.setText(texto.toString());
-    }
+        
+        SwingWorker<Void, String> worker = new SwingWorker<Void, String>() {
+            @Override
+            protected Void doInBackground() throws Exception {
+                ArquivoCSV ar = new ArquivoCSV();
+                String nomeDoArquivo = "passwords.csv"; // Nome do arquivo a ser lido
+                ClassificacaoSenha trans = new ClassificacaoSenha();
+                Transformacoes transformacoes = new Transformacoes();
+                Document doc = SaidaInformacoes.getDocument();
+            
+                doc.insertString(doc.getLength(), "Iniciando o Processo...\n\n", null);
+            
+                Thread.sleep(2000);
+
+                doc.insertString(doc.getLength(), "Lendo o arquivo: " + nomeDoArquivo + ".\n", null);
+                String saidas[] = ar.lerArquivoCSV(nomeDoArquivo);
+                doc.insertString(doc.getLength(), "Leitura do arquivo: " + nomeDoArquivo + " realizado com sucesso!\n\n", null);
+                
+                Thread.sleep(2000);
+
+                doc.insertString(doc.getLength(), "Criando a Classificação das senhas.\n", null);
+                saidas = trans.calssificaSenha(saidas);            
+                doc.insertString(doc.getLength(), "Classificação das senhas concluida!\n\n", null);
+            
+                Thread.sleep(2000);
+            
+                nomeDoArquivo = "password_classifier.csv";
+                doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + ".\n", null);
+                ar.criarArquivoCSV(nomeDoArquivo, saidas);
+                doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
+                
+                Thread.sleep(2000);
+                
+                doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para realizar as transfomações das datas.\n", null);
+                saidas = ar.lerArquivoCSV(nomeDoArquivo);
+                doc.insertString(doc.getLength(), "Leitura do arquivo: " + nomeDoArquivo + " realizado com sucesso!\n\n", null);
+                
+                doc.insertString(doc.getLength(), "Realizando as transformações das datas do Arquivo: " + nomeDoArquivo + ".\n", null);
+                saidas = transformacoes.transformaData(saidas);
+                doc.insertString(doc.getLength(), "Transformações das datas do Arquivo: " + nomeDoArquivo + " realizada com sucesso!\n\n", null);
+                
+                Thread.sleep(2000);
+                
+                nomeDoArquivo = "passwords_formated_data.csv";
+                doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + ".\n", null);
+                ar.criarArquivoCSV(nomeDoArquivo, saidas);
+                doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
+                
+                Thread.sleep(2000);
+                
+                doc.insertString(doc.getLength(), "Processo concuído!\n", null);
+
+                return null;
+            }
+        };
+        
+        worker.execute();
+    }      
     
 }
