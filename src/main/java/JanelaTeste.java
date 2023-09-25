@@ -25,7 +25,6 @@ public class JanelaTeste extends javax.swing.JFrame {
         PainelPrincipal = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         GerarRelatorio = new javax.swing.JButton();
-        CancelarProcesso = new javax.swing.JButton();
         BotaoIniciar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         SaidaInformacoes = new javax.swing.JTextPane();
@@ -55,13 +54,6 @@ public class JanelaTeste extends javax.swing.JFrame {
 
         GerarRelatorio.setText("Gerar Relatório");
 
-        CancelarProcesso.setText("Cancelar Processo");
-        CancelarProcesso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelarProcessoActionPerformed(evt);
-            }
-        });
-
         BotaoIniciar.setText("Iniciar");
         BotaoIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,23 +66,19 @@ public class JanelaTeste extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
+                .addGap(78, 78, 78)
                 .addComponent(BotaoIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(CancelarProcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                 .addComponent(GerarRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addGap(75, 75, 75))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotaoIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(GerarRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(CancelarProcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(GerarRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
@@ -207,10 +195,6 @@ public class JanelaTeste extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_MenuCountingSortActionPerformed
 
-    private void CancelarProcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarProcessoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CancelarProcessoActionPerformed
-
     private void BotaoIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoIniciarActionPerformed
         
     }//GEN-LAST:event_BotaoIniciarActionPerformed
@@ -222,7 +206,6 @@ public class JanelaTeste extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Algoritmos;
     private javax.swing.JButton BotaoIniciar;
-    private javax.swing.JButton CancelarProcesso;
     private javax.swing.JButton GerarRelatorio;
     private javax.swing.JMenuItem InfoGeral;
     private javax.swing.JMenu Informacoes;
