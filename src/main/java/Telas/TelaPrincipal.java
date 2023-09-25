@@ -3,6 +3,8 @@ package Telas;
 import CSV.ArquivoCSV;
 import Classificações_Transformações.ClassificacaoSenha;
 import Classificações_Transformações.Transformacoes;
+import java.io.File;
+import javax.swing.JOptionPane;
 import javax.swing.SwingWorker;
 import javax.swing.text.Document;
 
@@ -223,55 +225,84 @@ public class TelaPrincipal extends javax.swing.JFrame{
     private void BotaoIniciarActionPerformed(java.awt.event.ActionEvent evt) {                                             
         
         SwingWorker<Void, String> worker = new SwingWorker<Void, String>() {
+            
             @Override
             protected Void doInBackground() throws Exception {
                 ArquivoCSV ar = new ArquivoCSV();
-                String nomeDoArquivo = "passwords.csv"; // Nome do arquivo a ser lido
                 ClassificacaoSenha trans = new ClassificacaoSenha();
                 Transformacoes transformacoes = new Transformacoes();
                 Document doc = SaidaInformacoes.getDocument();
+                
+                String nomeDoArquivo = "passwords.csv"; // Nome do arquivo a ser lido
+                
+                if (new File("src/main/java/ArquivoBaseCSV/" + nomeDoArquivo).exists()) {
+                    
+                    doc.insertString(doc.getLength(), "Iniciando o Processo...\n\n", null);
             
-                doc.insertString(doc.getLength(), "Iniciando o Processo...\n\n", null);
-            
-                Thread.sleep(2000);
+                    Thread.sleep(2000);
+                    
+                    doc.insertString(doc.getLength(), "Lendo o arquivo: " + nomeDoArquivo + ".\n", null);
+                    String saidas[] = ar.lerArquivoCSV(nomeDoArquivo);
+                    doc.insertString(doc.getLength(), "Leitura do arquivo: " + nomeDoArquivo + " realizado com sucesso!\n\n", null);
+                
+                    Thread.sleep(2000);
 
-                doc.insertString(doc.getLength(), "Lendo o arquivo: " + nomeDoArquivo + ".\n", null);
-                String saidas[] = ar.lerArquivoCSV(nomeDoArquivo);
-                doc.insertString(doc.getLength(), "Leitura do arquivo: " + nomeDoArquivo + " realizado com sucesso!\n\n", null);
-                
-                Thread.sleep(2000);
-
-                doc.insertString(doc.getLength(), "Criando a Classificação das senhas.\n", null);
-                saidas = trans.calssificaSenha(saidas);            
-                doc.insertString(doc.getLength(), "Classificação das senhas concluida!\n\n", null);
+                    doc.insertString(doc.getLength(), "Criando a Classificação das senhas.\n", null);
+                    saidas = trans.calssificaSenha(saidas);            
+                    doc.insertString(doc.getLength(), "Classificação das senhas concluida!\n\n", null);
             
-                Thread.sleep(2000);
+                    Thread.sleep(2000);
             
-                nomeDoArquivo = "password_classifier.csv";
-                doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + ".\n", null);
-                ar.criarArquivoCSV(nomeDoArquivo, saidas);
-                doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
+                    nomeDoArquivo = "password_classifier.csv";
+                    doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + ".\n", null);
+                    ar.criarArquivoCSV(nomeDoArquivo, saidas);
+                    doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
                 
-                Thread.sleep(2000);
+                    Thread.sleep(2000);
                 
-                doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para realizar as transfomações das datas.\n", null);
-                saidas = ar.lerArquivoCSV(nomeDoArquivo);
-                doc.insertString(doc.getLength(), "Leitura do arquivo: " + nomeDoArquivo + " realizado com sucesso!\n\n", null);
+                    doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para realizar as transfomações das datas.\n", null);
+                    saidas = ar.lerArquivoCSV(nomeDoArquivo);
+                    doc.insertString(doc.getLength(), "Leitura do arquivo: " + nomeDoArquivo + " realizado com sucesso!\n\n", null);
                 
-                doc.insertString(doc.getLength(), "Realizando as transformações das datas do Arquivo: " + nomeDoArquivo + ".\n", null);
-                saidas = transformacoes.transformaData(saidas);
-                doc.insertString(doc.getLength(), "Transformações das datas do Arquivo: " + nomeDoArquivo + " realizada com sucesso!\n\n", null);
+                    doc.insertString(doc.getLength(), "Realizando as transformações das datas do Arquivo: " + nomeDoArquivo + ".\n", null);
+                    saidas = transformacoes.transformaData(saidas);
+                    doc.insertString(doc.getLength(), "Transformações das datas do Arquivo: " + nomeDoArquivo + " realizada com sucesso!\n\n", null);
                 
-                Thread.sleep(2000);
+                    Thread.sleep(2000);
                 
-                nomeDoArquivo = "passwords_formated_data.csv";
-                doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + ".\n", null);
-                ar.criarArquivoCSV(nomeDoArquivo, saidas);
-                doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
+                    nomeDoArquivo = "passwords_formated_data.csv";
+                    doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + ".\n", null);
+                    ar.criarArquivoCSV(nomeDoArquivo, saidas);
+                    doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
                 
-                Thread.sleep(2000);
+                    Thread.sleep(2000);
+                    
+                    nomeDoArquivo = "password_classifier.csv";
+                    doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para selecionar as senhas Boa e Muito Boa.\n", null);
+                    saidas = ar.lerArquivoCSV(nomeDoArquivo);
+                    doc.insertString(doc.getLength(), "Leitura do arquivo: " + nomeDoArquivo + " realizado com sucesso!\n\n", null);
+                    
+                    Thread.sleep(2000);
+                    
+                    doc.insertString(doc.getLength(), "Buscando a senhas Boa e Muito Boa.\n", null);
+                    saidas = trans.buscaSenhaBoaEMuitoBoa(saidas);
+                    doc.insertString(doc.getLength(), "Busca Concluida!\n\n", null);
+                    
+                    Thread.sleep(2000);
+                    
+                    nomeDoArquivo = "passwords_classifier.csv";
+                    doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + ".\n", null);
+                    ar.criarArquivoCSV(nomeDoArquivo, saidas);
+                    doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
+                    
+                    Thread.sleep(2000);
                 
-                doc.insertString(doc.getLength(), "Processo concuído!\n", null);
+                    doc.insertString(doc.getLength(), "Processo concuído!\n", null);
+                
+                } 
+                else {
+                    JOptionPane.showMessageDialog(null, "O arquivo " + nomeDoArquivo + " não foi encontrado.\nPor favor insira o arquivo na pasta.\nsrc/main/java/ArquivoBaseCSV/", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
 
                 return null;
             }

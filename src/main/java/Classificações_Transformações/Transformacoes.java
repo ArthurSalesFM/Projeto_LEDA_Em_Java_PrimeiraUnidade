@@ -30,8 +30,7 @@ public class Transformacoes {
             }
         } 
         catch (Exception e) {
-            System.err.println("Erro durante a transformação de datas: " + e.getMessage());
-            e.printStackTrace();
+            
         }
 
         return vetor;

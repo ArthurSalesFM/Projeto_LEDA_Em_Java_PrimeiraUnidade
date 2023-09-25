@@ -34,7 +34,7 @@ public class ArquivoCSV {
         
         String[] vetorDeLinhas = linhas.toArray(new String[0]);
         return vetorDeLinhas;
-}
+    }
      
      public void criarArquivoCSV(String nomeDoArquivo, String[] conteudo) {
         String csvFilePath = "src/main/java/ArquivoBaseCSV/" + nomeDoArquivo;
@@ -42,13 +42,13 @@ public class ArquivoCSV {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(csvFilePath))) {
 
             for (String linha : conteudo) {
-                bw.write(linha);
-                bw.newLine();
+                if (linha != null && !linha.trim().isEmpty()) {
+                    bw.write(linha);
+                    bw.newLine();
+                }
             }
-            System.out.println("Arquivo CSV criado com sucesso: " + csvFilePath);
         } 
         catch (IOException e) {
-            System.err.println("Erro ao criar o arquivo CSV: " + e.getMessage());
             e.printStackTrace();
         }
     }

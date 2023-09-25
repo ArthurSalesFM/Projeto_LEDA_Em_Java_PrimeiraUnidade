@@ -12,6 +12,31 @@ public class ClassificacaoSenha {
     public ClassificacaoSenha(){    
     }
     
+    public String[] buscaSenhaBoaEMuitoBoa(String vetor[]){
+        
+        int posicaoDeParadaNoVetor = 1;        
+        String vetorComAsSenhas[] = new String[vetor.length];
+        
+        vetorComAsSenhas[0] = vetor[0];
+        
+        for(int x = 1; x < vetor.length; x++){
+            String partes[] = vetor[x].split(",");
+            
+            if( partes[4].equals("Boa") || partes[4].equals("Muito Boa")){
+                vetorComAsSenhas[posicaoDeParadaNoVetor] = vetor[x];
+                posicaoDeParadaNoVetor++;
+            }            
+        }
+        
+        for(int i = 0; i < vetor.length; i++){
+            vetor[i] = "";
+        }
+        
+        vetor = Arrays.copyOf(vetorComAsSenhas, vetorComAsSenhas.length);      
+        
+        return vetor;
+    }
+    
     public String[] calssificaSenha(String vetor[]){        
         String novaColuna = "";        
         
