@@ -11,28 +11,30 @@ public class Transformacoes {
     }
     
     public String[] transformaData(String vetor[]) {
-        String dataModificada = "";
+        for (int x = 0; x < vetor.length; x++) {
+            String[] partesDaLinha = vetor[x].split(",");
 
-        try {
-            for (int x = 0; x < vetor.length; x++) {
-                String[] partesDaLinha = vetor[x].split(",");
+            if (partesDaLinha.length >= 4) {
+                String dataOriginal = partesDaLinha[3].trim();
+                String dataModificada = "";
 
-                if (x == 0) {
-                    dataModificada = vetor[x];
-                    vetor[x] = dataModificada;
+                if (dataOriginal.contains(" ")) {                
+                    String[] dataHora = dataOriginal.split(" ");
+                    String data = dataHora[0];
+                    dataModificada = data;
+
+                    if (data.contains("-")) {                    
+                        String[] partesData = data.split("-");
+                        dataModificada = partesData[2] + "/" + partesData[1] + "/" + partesData[0];
+                    }
                 } 
-                else {
-                    String[] parteEspecificaDaData = partesDaLinha[3].split(" ")[0].split("-");
-                    dataModificada = parteEspecificaDaData[2] + "/" + parteEspecificaDaData[1] + "/" + parteEspecificaDaData[0];
-                    partesDaLinha[3] = dataModificada;
-                    vetor[x] = String.join(",", partesDaLinha);
+                else {                
+                    dataModificada = dataOriginal;
                 }
+                partesDaLinha[3] = dataModificada;
+                vetor[x] = String.join(",", partesDaLinha);
             }
-        } 
-        catch (Exception e) {
-            
         }
-
         return vetor;
     }
 

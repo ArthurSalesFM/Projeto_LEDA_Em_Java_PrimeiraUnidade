@@ -7,9 +7,12 @@ package Interfaces;
  */
 public interface I_Ordenacao {
     
-    String[] ordenacaoTamanho(String[] vetor, int colunaOrdenacao);
+    String[] ordenacaoMedioMelhorCasoCampoLength(String[] vetor, int colunaOrdenacao);
+    String[] ordenacaoPiorCasoCampoLength(String[] vetor, int colunaOrdenacao);
 
-    String[] ordenacaoMes(String[] vetor, int colunaOrdenacao);
+    String[] ordenacaoMedioMelhorCasoCampoMes(String[] vetor, int colunaOrdenacao);
+    String[] ordenacaoPiorCasoCampoMes(String[] vetor, int colunaOrdenacao);
     
-    String[] ordenacaoData(String[] vetor, int colunaOrdenacao);
+    String[] ordenacaoMedioMelhorCasoCampoData(String[] vetor, int colunaOrdenacao);
+    String[] ordenacaoPiorCasoCampoData(String[] vetor, int colunaOrdenacao);
 }
