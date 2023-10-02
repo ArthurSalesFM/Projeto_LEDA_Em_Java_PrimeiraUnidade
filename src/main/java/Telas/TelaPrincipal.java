@@ -330,6 +330,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
                     
                     Thread.sleep(2000);
                     
+                    
                     nomeDoArquivo = "passwords_formated_data.csv";                    
                     
                     doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para Inciar a ordenção.\n", null);
@@ -338,22 +339,20 @@ public class TelaPrincipal extends javax.swing.JFrame{
                     
                     Thread.sleep(2000);                    
         
-                    doc.insertString(doc.getLength(), "ORDENAÇÂO MÉDIO CASO Campo Data.\n", null);
-                    saidas = merge.ordenacaoMedioMelhorCasoCampoData(saidas, 3);
+                    doc.insertString(doc.getLength(), "ORDENAÇÂO MÉDIO CASO Campo Length.\n", null);
+                    saidas = merge.ordenacaoMedioMelhorCasoCampoLength(saidas, 2);
                     doc.insertString(doc.getLength(), "Ordenação Conluida com sucesso\n\n", null);
                     
                     Thread.sleep(2000);
                     
-                    nomeDoArquivo = "passwords_data_mergeSort_medioCaso.csv";
+                    nomeDoArquivo = "passwords_length_mergeSort_medioCaso.csv";
                     doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + " após a ordenação.\n", null);
                     ar.criarArquivoCSV(nomeDoArquivo, saidas);
                     doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
                     
                     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-                    
-                    Thread.sleep(2000);
-                    
-                    nomeDoArquivo = "passwords_data_mergeSort_medioCaso.csv";                    
+                    Thread.sleep(2000);                
+                    nomeDoArquivo = "passwords_length_mergeSort_medioCaso.csv";                    
                     
                     doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para Inciar a ordenção.\n", null);
                     saidas = ar.lerArquivoCSV(nomeDoArquivo);
@@ -361,13 +360,13 @@ public class TelaPrincipal extends javax.swing.JFrame{
                     
                     Thread.sleep(2000);                    
         
-                    doc.insertString(doc.getLength(), "ORDENAÇÂO MELHOR CASO Campo Data.\n", null);
-                    saidas = merge.ordenacaoMedioMelhorCasoCampoData(saidas, 3);
+                    doc.insertString(doc.getLength(), "ORDENAÇÂO MELHOR CASO Campo Length.\n", null);
+                    saidas = merge.ordenacaoMedioMelhorCasoCampoLength(saidas, 2);
                     doc.insertString(doc.getLength(), "Ordenação Conluida com sucesso\n\n", null);
                     
                     Thread.sleep(2000);
                     
-                    nomeDoArquivo = "passwords_data_mergeSort_melhorCaso.csv";
+                    nomeDoArquivo = "passwords_length_mergeSort_melhorCaso.csv";
                     doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + " após a ordenação.\n", null);
                     ar.criarArquivoCSV(nomeDoArquivo, saidas);
                     doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
@@ -375,8 +374,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
                     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                     
                     Thread.sleep(2000);
-                    
-                    nomeDoArquivo = "passwords_data_mergeSort_melhorCaso.csv";                    
+                    nomeDoArquivo = "passwords_length_mergeSort_melhorCaso.csv";                    
                     
                     doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para Inciar a ordenção.\n", null);
                     saidas = ar.lerArquivoCSV(nomeDoArquivo);
@@ -384,16 +382,17 @@ public class TelaPrincipal extends javax.swing.JFrame{
                     
                     Thread.sleep(2000);                    
         
-                    doc.insertString(doc.getLength(), "ORDENAÇÂO PIOR CASO Campo Data.\n", null);
-                    saidas = merge.ordenacaoPiorCasoCampoData(saidas, 3);
+                    doc.insertString(doc.getLength(), "ORDENAÇÂO PIOR CASO Campo Length.\n", null);
+                    saidas = merge.ordenacaoPiorCasoCampoLength(saidas, 2);
                     doc.insertString(doc.getLength(), "Ordenação Conluida com sucesso\n\n", null);
                     
                     Thread.sleep(2000);
                     
-                    nomeDoArquivo = "passwords_data_mergeSort_piorCaso.csv";
+                    nomeDoArquivo = "passwords_length_mergeSort_piorCaso.csv";
                     doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + " após a ordenação.\n", null);
                     ar.criarArquivoCSV(nomeDoArquivo, saidas);
                     doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
+                    
                     
                     
                     
@@ -874,76 +873,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
                     
                     Thread.sleep(2000);                    
         
-                    doc.insertString(doc.getLength(), "ORDENAÇÂO MÉDIO CASO Campo Length.\n", null);
-                    saidas = merge.ordenacaoMedioMelhorCasoCampoLength(saidas, 2);
-                    doc.insertString(doc.getLength(), "Ordenação Conluida com sucesso\n\n", null);
-                    
-                    Thread.sleep(2000);
-                    
-                    nomeDoArquivo = "passwords_length_mergeSort_medioCaso.csv";
-                    doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + " após a ordenação.\n", null);
-                    ar.criarArquivoCSV(nomeDoArquivo, saidas);
-                    doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
-                    
-                    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-                    Thread.sleep(2000);
-                    
-                    nomeDoArquivo = "passwords_length_mergeSort_medioCaso.csv";                    
-                    
-                    doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para Inciar a ordenção.\n", null);
-                    saidas = ar.lerArquivoCSV(nomeDoArquivo);
-                    doc.insertString(doc.getLength(), "Leitura do arquivo: " + nomeDoArquivo + " realizado com sucesso!\n\n", null);
-                    
-                    Thread.sleep(2000);                    
-        
-                    doc.insertString(doc.getLength(), "ORDENAÇÂO MELHOR CASO Campo Length.\n", null);
-                    saidas = merge.ordenacaoMedioMelhorCasoCampoLength(saidas, 2);
-                    doc.insertString(doc.getLength(), "Ordenação Conluida com sucesso\n\n", null);
-                    
-                    Thread.sleep(2000);
-                    
-                    nomeDoArquivo = "passwords_length_mergeSort_melhorCaso.csv";
-                    doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + " após a ordenação.\n", null);
-                    ar.criarArquivoCSV(nomeDoArquivo, saidas);
-                    doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
-                    
-                    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-                    Thread.sleep(2000);
-                    
-                    nomeDoArquivo = "passwords_length_mergeSort_melhorCaso.csv";                    
-                    
-                    doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para Inciar a ordenção.\n", null);
-                    saidas = ar.lerArquivoCSV(nomeDoArquivo);
-                    doc.insertString(doc.getLength(), "Leitura do arquivo: " + nomeDoArquivo + " realizado com sucesso!\n\n", null);
-                    
-                    Thread.sleep(2000);                    
-        
-                    doc.insertString(doc.getLength(), "ORDENAÇÂO PIOR CASO Campo Length.\n", null);
-                    saidas = merge.ordenacaoPiorCasoCampoLength(saidas, 2);
-                    doc.insertString(doc.getLength(), "Ordenação Conluida com sucesso\n\n", null);
-                    
-                    Thread.sleep(2000);
-                    
-                    nomeDoArquivo = "passwords_length_mergeSort_piorCaso.csv";
-                    doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + " após a ordenação.\n", null);
-                    ar.criarArquivoCSV(nomeDoArquivo, saidas);
-                    doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
-
-                    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-                    Thread.sleep(2000);
-                    //=================================================================================================================================
-                    //=================================================================================================================================
-                    //=================================================================================================================================
-                    
-                    nomeDoArquivo = "passwords_formated_data.csv";                    
-                    
-                    doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para Inciar a ordenção.\n", null);
-                    saidas = ar.lerArquivoCSV(nomeDoArquivo);
-                    doc.insertString(doc.getLength(), "Leitura do arquivo: " + nomeDoArquivo + " realizado com sucesso!\n\n", null);
-                    
-                    Thread.sleep(2000);                    
-        
-                    doc.insertString(doc.getLength(), "ORDENAÇÂO MÉDIO CASO Campo Mês.\n", null);
+                    doc.insertString(doc.getLength(), "ORDENAÇÂO MÉDIO CASO Campo Mes.\n", null);
                     saidas = merge.ordenacaoMedioMelhorCasoCampoMes(saidas, 3);
                     doc.insertString(doc.getLength(), "Ordenação Conluida com sucesso\n\n", null);
                     
@@ -955,9 +885,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
                     doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
                     
                     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-                    
-                    Thread.sleep(2000);                    
-                    
+                    Thread.sleep(2000);                
                     nomeDoArquivo = "passwords_data_month_mergeSort_medioCaso.csv";                    
                     
                     doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para Inciar a ordenção.\n", null);
@@ -966,7 +894,7 @@ public class TelaPrincipal extends javax.swing.JFrame{
                     
                     Thread.sleep(2000);                    
         
-                    doc.insertString(doc.getLength(), "ORDENAÇÂO MELHOR CASO Campo Mês.\n", null);
+                    doc.insertString(doc.getLength(), "ORDENAÇÂO MELHOR CASO Campo Mes.\n", null);
                     saidas = merge.ordenacaoMedioMelhorCasoCampoMes(saidas, 3);
                     doc.insertString(doc.getLength(), "Ordenação Conluida com sucesso\n\n", null);
                     
@@ -976,12 +904,11 @@ public class TelaPrincipal extends javax.swing.JFrame{
                     doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + " após a ordenação.\n", null);
                     ar.criarArquivoCSV(nomeDoArquivo, saidas);
                     doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
-                                        
+                    
                     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                     
-                    Thread.sleep(2000);                    
-                    
-                    nomeDoArquivo = "passwords_data_month_mergeSort_melhorCaso.csv";                    
+                    Thread.sleep(2000);
+                    nomeDoArquivo = "passwords_data_month_insertionSort_melhorCaso.csv";                    
                     
                     doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para Inciar a ordenção.\n", null);
                     saidas = ar.lerArquivoCSV(nomeDoArquivo);
@@ -989,16 +916,97 @@ public class TelaPrincipal extends javax.swing.JFrame{
                     
                     Thread.sleep(2000);                    
         
-                    doc.insertString(doc.getLength(), "ORDENAÇÂO PIOR CASO Campo Mês.\n", null);
+                    doc.insertString(doc.getLength(), "ORDENAÇÂO PIOR CASO Campo Mes.\n", null);
                     saidas = merge.ordenacaoPiorCasoCampoMes(saidas, 3);
                     doc.insertString(doc.getLength(), "Ordenação Conluida com sucesso\n\n", null);
                     
                     Thread.sleep(2000);
                     
-                    nomeDoArquivo = "passwords_data_month_mergeSort_piorCaso.csv";
+                    nomeDoArquivo = "passwords_data_month_mergenSort_piorCaso.csv";
                     doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + " após a ordenação.\n", null);
                     ar.criarArquivoCSV(nomeDoArquivo, saidas);
                     doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
+
+                    Thread.sleep(2000);
+                    //=================================================================================================================================
+                    //=================================================================================================================================
+                    //=================================================================================================================================
+                    
+
+
+
+
+
+
+                    Thread.sleep(2000);
+                    //=================================================================================================================================
+                    //=================================================================================================================================
+                    //=================================================================================================================================
+                    
+                    Thread.sleep(2000);
+                    nomeDoArquivo = "passwords_formated_data.csv";                    
+                    
+                    doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para Inciar a ordenção.\n", null);
+                    saidas = ar.lerArquivoCSV(nomeDoArquivo);
+                    doc.insertString(doc.getLength(), "Leitura do arquivo: " + nomeDoArquivo + " realizado com sucesso!\n\n", null);
+                    
+                    Thread.sleep(2000);                    
+        
+                    doc.insertString(doc.getLength(), "ORDENAÇÂO MÉDIO CASO Campo Data.\n", null);
+                    saidas = merge.ordenacaoMedioMelhorCasoCampoData(saidas, 3);
+                    doc.insertString(doc.getLength(), "Ordenação Conluida com sucesso\n\n", null);
+                    
+                    Thread.sleep(2000);
+                    
+                    nomeDoArquivo = "passwords_data_mergeSort_medioCaso.csv";
+                    doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + " após a ordenação.\n", null);
+                    ar.criarArquivoCSV(nomeDoArquivo, saidas);
+                    doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
+                    
+                    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                        
+                    nomeDoArquivo = "passwords_data_mergeSort_medioCaso.csv";                    
+                    
+                    doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para Inciar a ordenção.\n", null);
+                    saidas = ar.lerArquivoCSV(nomeDoArquivo);
+                    doc.insertString(doc.getLength(), "Leitura do arquivo: " + nomeDoArquivo + " realizado com sucesso!\n\n", null);
+                    
+                    Thread.sleep(2000);                    
+        
+                    doc.insertString(doc.getLength(), "ORDENAÇÂO MELHOR CASO Campo Data.\n", null);
+                    saidas = merge.ordenacaoMedioMelhorCasoCampoData(saidas, 3);
+                    doc.insertString(doc.getLength(), "Ordenação Conluida com sucesso\n\n", null);
+                    
+                    Thread.sleep(2000);
+                    
+                    nomeDoArquivo = "passwords_data_mergeSort_melhorCaso.csv";
+                    doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + " após a ordenação.\n", null);
+                    ar.criarArquivoCSV(nomeDoArquivo, saidas);
+                    doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
+                    
+                    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                        
+                    nomeDoArquivo = "passwords_data_mergeSort_melhorCaso.csv";                    
+                    
+                    doc.insertString(doc.getLength(), "Lendo o Arquivo: " + nomeDoArquivo + ", para Inciar a ordenção.\n", null);
+                    saidas = ar.lerArquivoCSV(nomeDoArquivo);
+                    doc.insertString(doc.getLength(), "Leitura do arquivo: " + nomeDoArquivo + " realizado com sucesso!\n\n", null);
+                    
+                    Thread.sleep(2000);                    
+        
+                    doc.insertString(doc.getLength(), "ORDENAÇÂO PIOR CASO Campo Data.\n", null);
+                    saidas = merge.ordenacaoPiorCasoCampoData(saidas, 3);
+                    doc.insertString(doc.getLength(), "Ordenação Conluida com sucesso\n\n", null);
+                    
+                    Thread.sleep(2000);
+                    
+                    nomeDoArquivo = "passwords_data_mergeSort_piorCaso.csv";
+                    doc.insertString(doc.getLength(), "Criando o Arquivo: " + nomeDoArquivo + " após a ordenação.\n", null);
+                    ar.criarArquivoCSV(nomeDoArquivo, saidas);
+                    doc.insertString(doc.getLength(), "Arquivo " + nomeDoArquivo + " criado com sucesso!\n\n", null);
+                    
+                    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                    
                     
                     //=================================================================================================================================
                     //=================================================================================================================================
