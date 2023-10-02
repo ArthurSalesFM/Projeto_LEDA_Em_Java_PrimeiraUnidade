@@ -22,7 +22,9 @@ public class ClassificacaoSenha {
         for(int x = 1; x < vetor.length; x++){
             String partes[] = vetor[x].split(",");
             
-            if( partes[4].equals("Boa") || partes[4].equals("Muito Boa")){
+            int totalVetor = partes.length - 1;            
+            
+            if( partes[totalVetor].equals("Boa") || partes[totalVetor].equals("Muito Boa")){
                 vetorComAsSenhas[posicaoDeParadaNoVetor] = vetor[x];
                 posicaoDeParadaNoVetor++;
             }            
@@ -48,9 +50,27 @@ public class ClassificacaoSenha {
                 vetor[i] = linhaModificada;
             }
             else{
-                novaColuna = classificacao(partes[1]);
-                String linhaModificada = vetor[i] + "," + novaColuna;
-                vetor[i] = linhaModificada;
+                
+                int ondeComecaAsSenhas = 1;
+                int ondeTermina = partes.length - 3; 
+                
+                if(partes.length > 4){               
+                    
+                    for(int x = ondeComecaAsSenhas ; x < ondeTermina; x++){
+                        novaColuna += partes[x] + ",";                             
+                    }
+                    
+                    novaColuna = classificacao(novaColuna);
+                    String linhaModificada = vetor[i] + "," + novaColuna;
+                    vetor[i] = linhaModificada;
+                    novaColuna = "";
+                }
+                else{
+                    novaColuna = classificacao(partes[1]);
+                    String linhaModificada = vetor[i] + "," + novaColuna;
+                    vetor[i] = linhaModificada;
+                    novaColuna = "";
+                }
             }            
         }
         
