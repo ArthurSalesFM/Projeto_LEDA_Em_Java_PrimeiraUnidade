@@ -1,8 +1,6 @@
 package AlgoritmosDeOrdenação;
 
 import Interfaces.I_Ordenacao;
-import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  *
@@ -12,287 +10,273 @@ public class MergeSort implements I_Ordenacao{
 
     @Override
     public String[] ordenacaoMedioMelhorCasoCampoLength(String[] vetor, int colunaOrdenacao) {
-        mergeSortLength(vetor, colunaOrdenacao, 1, vetor.length - 1, 2);
+        mergeSortLength(vetor, 1, vetor.length, 2);
         return vetor;
     }
 
     @Override
     public String[] ordenacaoPiorCasoCampoLength(String[] vetor, int colunaOrdenacao) {
-        mergeSortLength(vetor, colunaOrdenacao, 1, vetor.length - 1, 1);
+        mergeSortLength(vetor, 1, vetor.length, 1);
         return vetor;
     }
 
     @Override
     public String[] ordenacaoMedioMelhorCasoCampoMes(String[] vetor, int colunaOrdenacao) {
-        mergeSortMes(vetor, colunaOrdenacao,2);
+        mergeSortMes(vetor, 1, vetor.length, 2);
         return vetor;
     }
 
     @Override
     public String[] ordenacaoPiorCasoCampoMes(String[] vetor, int colunaOrdenacao) {
-        mergeSortMes(vetor, colunaOrdenacao, 1);
+        mergeSortMes(vetor, 1, vetor.length, 1);
         return vetor;
     }
 
     @Override
     public String[] ordenacaoMedioMelhorCasoCampoData(String[] vetor, int colunaOrdenacao) {
-        mergeSortData(vetor, colunaOrdenacao, 2);
-        return vetor;    
+        mergeSortData(vetor, 1, vetor.length, 2);
+        return vetor;   
     }
 
     @Override
     public String[] ordenacaoPiorCasoCampoData(String[] vetor, int colunaOrdenacao) {
-        mergeSortData(vetor, colunaOrdenacao, 1);
+        mergeSortData(vetor, 1, vetor.length, 1);
         return vetor;
     }
       
-    private void mergeSortLength(String[] vetor, int colunaOrdenacao, int inicio, int fim, int tipo) {
-        if (inicio < fim) {
-            int meio = inicio + (fim - inicio) / 2;
+    private void mergeSortLength(String[] vetor, int inicio, int fim, int tipo) {
+        if (inicio < fim - 1) {
+            int meio = (inicio + fim) / 2;
 
-            mergeSortLength(vetor, colunaOrdenacao, inicio, meio, tipo);
-            mergeSortLength(vetor, colunaOrdenacao, meio + 1, fim, tipo);
+            mergeSortLength(vetor, inicio, meio, tipo);
+            mergeSortLength(vetor, meio, fim, tipo);
 
-            mergeLength(vetor, colunaOrdenacao, inicio, meio, fim, tipo);
+            intercalaLength(vetor, inicio, meio, fim, tipo);
         }
     }
     
-    private void mergeLength(String[] vetor, int colunaOrdenacao, int inicio, int meio, int fim, int tipo) {
-        String[] temp = new String[fim - inicio + 1];
-        int i = inicio, j = meio + 1, k = 0;
+    private void intercalaLength(String[] vetor, int inicio, int meio, int fim, int tipo) {
+        String[] novoVetor = new String[fim - inicio];
+        int i = inicio;
+        int m = meio;
+        int pos = 0;
 
-        while (i <= meio && j <= fim) {
-            if (compararLinhasLength(vetor[i], vetor[j], colunaOrdenacao, tipo) <= 0) {
-                temp[k++] = vetor[i++];
-            } 
-            else {
-                temp[k++] = vetor[j++];
-            }
-        }
+        while (i < meio && m < fim) {
+            String[] linhaA = vetor[i].split(",");
+            String[] linhaB = vetor[m].split(",");
 
-        while (i <= meio) {
-            temp[k++] = vetor[i++];
-        }
-
-        while (j <= fim) {
-            temp[k++] = vetor[j++];
-        }
-
-        for (i = 0; i < temp.length; i++) {
-            vetor[inicio + i] = temp[i];
-        }
-    }
-    
-    private int compararLinhasLength(String linhaA, String linhaB, int colunaOrdenacao, int tipo) {
-        String[] partesA = linhaA.split(",");
-        String[] partesB = linhaB.split(",");
-
-        if (partesA.length <= colunaOrdenacao || partesB.length <= colunaOrdenacao) {
-            return 0;
-        }
-
-        try {
-            double valorA, valorB;
-
-            if (partesA.length > 4 || partesB.length > 4) {
-                int colunaCorretaA = partesA.length - 3;
-                int colunaCorretaB = partesB.length - 3;
-
-                valorA = converterParaDouble(partesA[colunaCorretaA]);
-                valorB = converterParaDouble(partesB[colunaCorretaB]);
-            } 
-            else {
-                valorA = converterParaDouble(partesA[colunaOrdenacao]);
-                valorB = converterParaDouble(partesB[colunaOrdenacao]);
-            }
-            if (tipo == 1) {
-                return Double.compare(valorA, valorB);
-            } 
-            else {
-                return Double.compare(valorB, valorA);
-            }
-        } 
-        catch (NumberFormatException e) {
-            System.err.println("Erro ao converter valores: " + e.getMessage());
-            e.printStackTrace();
-        }
-
-        return 0;
-    }
-
-    private double converterParaDouble(String valor) {
-        if (valor == null || valor.isEmpty()) {
-            return 0.0;
-        }
-
-        valor = valor.replaceAll("[^0-9.]", "");
-
-        if (valor.isEmpty()) {
-            return 0.0;
-        }
-
-        try {
-            return Double.parseDouble(valor);
-        } 
-        catch (NumberFormatException e) {
-            System.err.println("Erro ao converter valor: " + e.getMessage());
-            e.printStackTrace();
-            return 0.0;
-        }
-    }
-    
-    private void mergeSortMes(String[] vetor, int colunaOrdenacao, int tipo) {
-
-        if (vetor.length > 1) {
-            int meio = vetor.length / 2;
-
-            String[] metadeEsquerda = Arrays.copyOfRange(vetor, 1, meio);
-            String[] metadeDireita = Arrays.copyOfRange(vetor, meio, vetor.length);
-
-            mergeSortData(metadeEsquerda, colunaOrdenacao, tipo);
-            mergeSortData(metadeDireita, colunaOrdenacao, tipo);
-
-            int i = 0, j = 0, k = 0;
-
-            while (i < metadeEsquerda.length && j < metadeDireita.length) {
-                String[] linhaA = metadeEsquerda[i].split(",");
-                String[] linhaB = metadeDireita[j].split(",");
-
-                if (linhaA.length <= colunaOrdenacao || linhaB.length <= colunaOrdenacao) {                
-                    i++;
-                    j++;
-                    continue;
-                }
-
-                try {
-                    String dataA = linhaA[colunaOrdenacao];
-                    String dataB = linhaB[colunaOrdenacao];
-
-                    String[] partesDataA = dataA.split("/");
-                    String[] partesDataB = dataB.split("/");
-
-                    int mesA = Integer.parseInt(partesDataA[1]);
-                    int mesB = Integer.parseInt(partesDataB[1]);
-
-                    if (tipo == 2) {
-                        if (mesA > mesB) {
-                            vetor[k] = metadeEsquerda[i];
-                            i++;
-                        } 
-                        else {
-                            vetor[k] = metadeDireita[j];
-                            j++;
-                        }
-                    } 
-                    else {
-                        if (mesA < mesB) {
-                            vetor[k] = metadeEsquerda[i];
-                            i++;
-                        } 
-                        else {
-                            vetor[k] = metadeDireita[j];
-                            j++;
-                        }
-                    }
-                } 
-                catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
-                    i++;
-                    j++;
-                }
-                k++;
-            }
-            
-            while (i < metadeEsquerda.length) {
-                vetor[k] = metadeEsquerda[i];
+            if (linhaA.length <= 2 || linhaB.length <= 2) {
                 i++;
-                k++;
+                m++;
+                continue;
             }
 
-            while (j < metadeDireita.length) {
-                vetor[k] = metadeDireita[j];
-                j++;
-                k++;
-            }
-        }
-    }
-    
-    private void mergeSortData(String[] vetor, int colunaOrdenacao, int tipo) {
-        
-        if (vetor.length > 1) {
-            int meio = vetor.length / 2;
-
-            String[] metadeEsquerda = Arrays.copyOfRange(vetor, 1, meio);
-            String[] metadeDireita = Arrays.copyOfRange(vetor, meio, vetor.length);
-
-            mergeSortData(metadeEsquerda, colunaOrdenacao, tipo);
-            mergeSortData(metadeDireita, colunaOrdenacao, tipo);
-
-            int i = 0, j = 0, k = 0;
-        
-            while (i < metadeEsquerda.length && j < metadeDireita.length) {
-                String[] linhaA = metadeEsquerda[i].split(",");
-                String[] linhaB = metadeDireita[j].split(",");
+            String lengthA = linhaA[linhaA.length - 3];
+            String lengthB = linhaB[linhaB.length - 3];
             
-                if (linhaA.length <= colunaOrdenacao || linhaB.length <= colunaOrdenacao) {
-                // Trate os casos em que não há dados suficientes para ordenação
+            int A = Integer.parseInt(lengthA);            
+            int B = Integer.parseInt(lengthB);
+
+            if (tipo == 2) {
+                if (A > B) {
+                    novoVetor[pos] = vetor[i];
+                    pos++;
                     i++;
-                    j++;
-                    continue;
-                }
-
-                try {
-                    String dataA = linhaA[colunaOrdenacao];
-                    String dataB = linhaB[colunaOrdenacao];
-
-                    String[] partesDataA = dataA.split("/");
-                    String[] partesDataB = dataB.split("/");
-
-                    int anoA = Integer.parseInt(partesDataA[2]);
-                    int anoB = Integer.parseInt(partesDataB[2]);
-
-                    
-                    if(tipo == 2){
-                        if (anoA > anoB || (anoA == anoB && partesDataA[1].compareTo(partesDataB[1]) > 0) || (anoA == anoB && partesDataA[1].equals(partesDataB[1]) && partesDataA[0].compareTo(partesDataB[0]) > 0)) {
-                            vetor[k] = metadeEsquerda[i];
-                            i++;
-                        }
-                        else {
-                            vetor[k] = metadeDireita[j];
-                            j++;
-                        }
-                    }
-                    else{
-                        if (anoA < anoB || (anoA == anoB && partesDataA[1].compareTo(partesDataB[1]) < 0) || (anoA == anoB && partesDataA[1].equals(partesDataB[1]) && partesDataA[0].compareTo(partesDataB[0]) < 0)) {
-                            vetor[k] = metadeEsquerda[i];
-                            i++;
-                        } 
-                        else {
-                            vetor[k] = metadeDireita[j];
-                            j++;
-                        }
-                    }               
                 } 
-                catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
-                    // Trate exceções
-                    i++;
-                    j++;
+                else {
+                    novoVetor[pos] = vetor[m];
+                    pos++;
+                    m++;
                 }
-                k++;
-            }
-
-            // Lidar com elementos restantes em ambas as metades
-            while (i < metadeEsquerda.length) {
-                vetor[k] = metadeEsquerda[i];
-                i++;
-                k++;
-            }
-
-            while (j < metadeDireita.length) {
-                vetor[k] = metadeDireita[j];
-                j++;
-                k++;
+            } 
+            else {
+                if (A < B) {
+                    novoVetor[pos] = vetor[i];
+                    pos++;
+                    i++;
+                } 
+                else {
+                    novoVetor[pos] = vetor[m];
+                    pos++;
+                    m++;
+                }
             }
         }
+
+        while (i < meio) {
+            novoVetor[pos] = vetor[i];
+            pos++;
+            i++;
+        }
+
+        while (m < fim) {
+            novoVetor[pos] = vetor[m];
+            pos++;
+            m++;
+        }
+
+        System.arraycopy(novoVetor, 0, vetor, inicio, novoVetor.length);
+    } 
+    
+    private void mergeSortMes(String[] vetor, int inicio, int fim, int tipo) {
+        if (inicio < fim - 1) {
+            int meio = (inicio + fim) / 2;
+
+            mergeSortMes(vetor, inicio, meio, tipo);
+            mergeSortMes(vetor, meio, fim, tipo);
+
+            intercalaMes(vetor, inicio, meio, fim, tipo);
+        }
     }
+
+    private void intercalaMes(String[] vetor, int inicio, int meio, int fim, int tipo) {
+        String[] novoVetor = new String[fim - inicio];
+        int i = inicio;
+        int m = meio;
+        int pos = 0;
+
+        while (i < meio && m < fim) {
+            String[] linhaA = vetor[i].split(",");
+            String[] linhaB = vetor[m].split(",");
+
+            if (linhaA.length <= 2 || linhaB.length <= 2) {
+                i++;
+                m++;
+                continue;
+            }
+
+            String dataA = linhaA[linhaA.length - 2];
+            String dataB = linhaB[linhaB.length - 2];
+
+            String[] partesDataA = dataA.split("/");
+            String[] partesDataB = dataB.split("/");
+
+            
+            int mesA = Integer.parseInt(partesDataA[1]);            
+            int mesB = Integer.parseInt(partesDataB[1]);
+
+            if (tipo == 2) {
+                if (mesA > mesB) {
+                    novoVetor[pos] = vetor[i];
+                    pos++;
+                    i++;
+                } 
+                else {
+                    novoVetor[pos] = vetor[m];
+                    pos++;
+                    m++;
+                }
+            } 
+            else {
+                if (mesA< mesB) {
+                    novoVetor[pos] = vetor[i];
+                    pos++;
+                    i++;
+                } 
+                else {
+                    novoVetor[pos] = vetor[m];
+                    pos++;
+                    m++;
+                }
+            }
+        }
+
+        while (i < meio) {
+            novoVetor[pos] = vetor[i];
+            pos++;
+            i++;
+        }
+
+        while (m < fim) {
+            novoVetor[pos] = vetor[m];
+            pos++;
+            m++;
+        }
+
+        System.arraycopy(novoVetor, 0, vetor, inicio, novoVetor.length);
+    } 
+    
+    private void mergeSortData(String[] vetor, int inicio, int fim, int tipo) {
+        if (inicio < fim - 1) {
+            int meio = (inicio + fim) / 2;
+
+            mergeSortData(vetor, inicio, meio, tipo);
+            mergeSortData(vetor, meio, fim, tipo);
+
+            intercalaData(vetor, inicio, meio, fim, tipo);
+        }
+    }
+
+    private void intercalaData(String[] vetor, int inicio, int meio, int fim, int tipo) {
+        String[] novoVetor = new String[fim - inicio];
+        int i = inicio;
+        int m = meio;
+        int pos = 0;
+
+        while (i < meio && m < fim) {
+            String[] linhaA = vetor[i].split(",");
+            String[] linhaB = vetor[m].split(",");
+
+            if (linhaA.length <= 2 || linhaB.length <= 2) {
+                i++;
+                m++;
+                continue;
+            }
+
+            String dataA = linhaA[linhaA.length - 2];
+            String dataB = linhaB[linhaB.length - 2];
+
+            String[] partesDataA = dataA.split("/");
+            String[] partesDataB = dataB.split("/");
+
+            int anoA = Integer.parseInt(partesDataA[2]);
+            int mesA = Integer.parseInt(partesDataA[1]);
+            int diaA = Integer.parseInt(partesDataA[0]);
+
+            int anoB = Integer.parseInt(partesDataB[2]);
+            int mesB = Integer.parseInt(partesDataB[1]);
+            int diaB = Integer.parseInt(partesDataB[0]);
+
+            if (tipo == 2) {
+                if (anoA > anoB || (anoA == anoB && mesA > mesB) || (anoA == anoB && mesA == mesB && diaA > diaB)) {
+                    novoVetor[pos] = vetor[i];
+                    pos++;
+                    i++;
+                } 
+                else {
+                    novoVetor[pos] = vetor[m];
+                    pos++;
+                    m++;
+                }
+            } 
+            else {
+                if (anoA < anoB || (anoA == anoB && mesA < mesB) || (anoA == anoB && mesA == mesB && diaA < diaB)) {
+                    novoVetor[pos] = vetor[i];
+                    pos++;
+                    i++;
+                } 
+                else {
+                    novoVetor[pos] = vetor[m];
+                    pos++;
+                    m++;
+                }
+            }
+        }
+
+        while (i < meio) {
+            novoVetor[pos] = vetor[i];
+            pos++;
+            i++;
+        }
+
+        while (m < fim) {
+            novoVetor[pos] = vetor[m];
+            pos++;
+            m++;
+        }
+
+        System.arraycopy(novoVetor, 0, vetor, inicio, novoVetor.length);
+    }  
+    
     
 }

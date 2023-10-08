@@ -218,7 +218,6 @@ public class QuickSort implements I_Ordenacao{
             return Integer.compare(valorB, valorA); // Ordenação descendente
         }
     }
-
     
     private void trocarElementos(String[] vetor, int i, int j) {
         String temp = vetor[i];
