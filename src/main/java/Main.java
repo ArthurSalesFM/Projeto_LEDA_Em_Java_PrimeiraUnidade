@@ -1,10 +1,10 @@
+import DadosDasOrdenacoes.MatrizDosDados;
 import Telas.TelaPrincipal;
 
 /**
  *
  * @author Arthur Felipe MS
  */
-
 public class Main {
     public static void main(String[] args) {
         
@@ -13,6 +13,7 @@ public class Main {
                 new TelaPrincipal().setVisible(true);
                 //Mudar depois para TelaPrincipalasdasd || JanelaTeste para testes
             }
-        });       
+        }); 
+        
     }
 }

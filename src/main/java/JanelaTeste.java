@@ -53,6 +53,11 @@ public class JanelaTeste extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         GerarRelatorio.setText("Gerar Relatório");
+        GerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GerarRelatorioActionPerformed(evt);
+            }
+        });
 
         BotaoIniciar.setText("Iniciar");
         BotaoIniciar.addActionListener(new java.awt.event.ActionListener() {
@@ -265,6 +270,10 @@ public class JanelaTeste extends javax.swing.JFrame {
     private void MenuSelectionSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSelectionSortActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MenuSelectionSortActionPerformed
+
+    private void GerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerarRelatorioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GerarRelatorioActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Algoritmos;

@@ -14,14 +14,15 @@ public class SelectionSort implements I_Ordenacao{
 
         for (int i = 0; i < n - 1; i++) {
             int indiceMinimo = i;
-
+                        
             for (int j = i + 1; j < n; j++) {
                 String[] linhaA = vetor[indiceMinimo].split(",");
                 String[] linhaB = vetor[j].split(",");
-
-                if (linhaA.length > 4 || linhaB.length > 4) {
+                
+                
+                if (linhaA.length > 5 || linhaB.length > 5) {                   
                     int colunaCorretaA = linhaA.length - 3;
-                    int colunaCorretaB = linhaB.length - 3;
+                    int colunaCorretaB = linhaB.length - 3;                    
 
                     if (linhaA.length > colunaCorretaA && linhaB.length > colunaCorretaB) {
                         try {
@@ -70,7 +71,7 @@ public class SelectionSort implements I_Ordenacao{
                 String[] linhaA = vetor[indiceMinimo].split(",");
                 String[] linhaB = vetor[j].split(",");
 
-                if (linhaA.length > 4 || linhaB.length > 4) {
+                if (linhaA.length > 5 || linhaB.length > 5) {
                     int colunaCorretaA = linhaA.length - 3;
                     int colunaCorretaB = linhaB.length - 3;
 
@@ -121,7 +122,7 @@ public class SelectionSort implements I_Ordenacao{
                 String[] linhaA = vetor[indiceMinimo].split(",");
                 String[] linhaB = vetor[j].split(",");
                 
-                if(linhaA.length > 4 || linhaB.length > 4){
+                if(linhaA.length > 5 || linhaB.length > 5){
                     int colunaCorretaA = linhaA.length - 2;
                     int colunaCorretaB = linhaB.length - 2;
                     
@@ -181,7 +182,7 @@ public class SelectionSort implements I_Ordenacao{
                 String[] linhaA = vetor[indiceMinimo].split(",");
                 String[] linhaB = vetor[j].split(",");
                 
-                if(linhaA.length > 4 || linhaB.length > 4){
+                if(linhaA.length > 5 || linhaB.length > 5){
                     int colunaCorretaA = linhaA.length - 2;
                     int colunaCorretaB = linhaB.length - 2;
                     
@@ -241,7 +242,7 @@ public class SelectionSort implements I_Ordenacao{
                 String[] linhaA = vetor[indiceMinimo].split(",");
                 String[] linhaB = vetor[j].split(",");
                 
-                if(linhaA.length > 4 || linhaB.length > 4){
+                if(linhaA.length > 5 || linhaB.length > 5){
                     int posicaoA = linhaA.length - 2;
                     int posicaoB = linhaB.length - 2;
                     
@@ -338,7 +339,7 @@ public class SelectionSort implements I_Ordenacao{
                 String[] linhaA = vetor[indiceMinimo].split(",");
                 String[] linhaB = vetor[j].split(",");
                 
-                if(linhaA.length > 4 || linhaB.length > 4){
+                if(linhaA.length > 5 || linhaB.length > 5){
                     int posicaoA = linhaA.length - 2;
                     int posicaoB = linhaB.length - 2;
                     

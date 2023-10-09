@@ -52,7 +52,6 @@ public class Fachada {
         this.matriz = new MatrizDosDados();
     }
     
-    
     public void iniciarProcesso( JTextPane SaidaInformacoes, JButton BotaoIniciar, JButton GerarRelatorio, JMenu MenuGeralProjeto){
                         
         SwingWorker<Void, String> worker = new SwingWorker<Void, String>() {
@@ -1759,10 +1758,10 @@ public class Fachada {
                         }                   
                     }
                     
-                    doc.insertString(doc.getLength(), "\n\n\n =========================================PROCESSO CONCLUÍDO=========================================\n\n\n", null);
+                    doc.insertString(doc.getLength(), "\n\n\n =========================================PROCESSO CONCLUÍDO========================================\n", null);
                     Thread.sleep(1000);
-                    
-                    BotaoIniciar.setEnabled(true);
+                                        
+                    //BotaoIniciar.setEnabled(true);
                     GerarRelatorio.setEnabled(true);
                     MenuGeralProjeto.setEnabled(true);
                 }
@@ -1776,4 +1775,16 @@ public class Fachada {
         worker.execute();        
     }  
     
+    public String informacoesDaMatriz(){
+        String retorno = matriz.informacoesDeTodasAsOrdenacoes();
+        retorno += matriz.informacoesEspecificaPorTipoDeOrdenacao(0, "SELECTION SORT");
+        retorno += matriz.informacoesEspecificaPorTipoDeOrdenacao(1, "INSERTION SORT");
+        retorno += matriz.informacoesEspecificaPorTipoDeOrdenacao(2, "MERGE SORT");
+        retorno += matriz.informacoesEspecificaPorTipoDeOrdenacao(3, "QUICK SORT");
+        retorno += matriz.informacoesEspecificaPorTipoDeOrdenacao(4, "QUICK SORT COM MEDIANA");
+        retorno += matriz.informacoesEspecificaPorTipoDeOrdenacao(5, "COUNTING SORT");
+        retorno += matriz.informacoesEspecificaPorTipoDeOrdenacao(6, "HEAP SORT");
+        
+        return retorno;
+    }
 }

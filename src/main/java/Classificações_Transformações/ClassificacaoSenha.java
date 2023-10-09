@@ -42,7 +42,7 @@ public class ClassificacaoSenha {
         return vetor;
     }
     
-    public String[] calssificaSenha(String vetor[]){        
+    public String[] calssificaSenha(String vetor[]){
         String novaColuna = ""; 
         String[] partes;
         
@@ -60,7 +60,7 @@ public class ClassificacaoSenha {
                         senhaModificada +=  partes[j] + ".";
                     }                    
                 }
-                vetor[i] = partes[0] + "," + senhaModificada + "," + partes[partes.length - 2] + "," + partes[partes.length - 1];
+                vetor[i] = partes[0] + "," + senhaModificada + "," + partes[partes.length - 2] + "," + partes[partes.length - 1];                
             }
             
             partes = vetor[i].split(",");            
