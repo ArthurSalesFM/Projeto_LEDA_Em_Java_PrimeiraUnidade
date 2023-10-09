@@ -66,11 +66,11 @@ public class JanelaTeste extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
+                .addGap(120, 120, 120)
                 .addComponent(BotaoIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
                 .addComponent(GerarRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75))
+                .addGap(106, 106, 106))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,19 +90,19 @@ public class JanelaTeste extends javax.swing.JFrame {
             PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PainelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addContainerGap())
         );
         PainelPrincipalLayout.setVerticalGroup(
             PainelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PainelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         MenuPrincipal.setToolTipText("AAAAA");
@@ -120,6 +120,11 @@ public class JanelaTeste extends javax.swing.JFrame {
         Informacoes.add(InfoGeral);
 
         ProjetoPasswords.setText("Projeto (Passwords)");
+        ProjetoPasswords.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProjetoPasswordsActionPerformed(evt);
+            }
+        });
         Informacoes.add(ProjetoPasswords);
 
         SobreOAutor.setText("Sobre o Autor");
@@ -144,21 +149,51 @@ public class JanelaTeste extends javax.swing.JFrame {
         Algoritmos.add(MenuCountingSort);
 
         MenuHeapSort.setText("Heap Sort");
+        MenuHeapSort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuHeapSortActionPerformed(evt);
+            }
+        });
         Algoritmos.add(MenuHeapSort);
 
         MenuInsertionSort.setText("Insertion Sort");
+        MenuInsertionSort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuInsertionSortActionPerformed(evt);
+            }
+        });
         Algoritmos.add(MenuInsertionSort);
 
         MenuMergeSort.setText("Merge Sort");
+        MenuMergeSort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuMergeSortActionPerformed(evt);
+            }
+        });
         Algoritmos.add(MenuMergeSort);
 
         MenuQScMedianade3.setText("Q.S c/ Mediana de 3");
+        MenuQScMedianade3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuQScMedianade3ActionPerformed(evt);
+            }
+        });
         Algoritmos.add(MenuQScMedianade3);
 
         MenuQuickSort.setText("Quick Sort");
+        MenuQuickSort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuQuickSortActionPerformed(evt);
+            }
+        });
         Algoritmos.add(MenuQuickSort);
 
         MenuSelectionSort.setText("Selection Sort");
+        MenuSelectionSort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuSelectionSortActionPerformed(evt);
+            }
+        });
         Algoritmos.add(MenuSelectionSort);
 
         MenuGeralProjeto.add(Algoritmos);
@@ -173,15 +208,15 @@ public class JanelaTeste extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PainelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(PainelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PainelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addComponent(PainelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -202,6 +237,34 @@ public class JanelaTeste extends javax.swing.JFrame {
     private void SobreOAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SobreOAutorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SobreOAutorActionPerformed
+
+    private void ProjetoPasswordsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProjetoPasswordsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProjetoPasswordsActionPerformed
+
+    private void MenuHeapSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuHeapSortActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuHeapSortActionPerformed
+
+    private void MenuInsertionSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuInsertionSortActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuInsertionSortActionPerformed
+
+    private void MenuMergeSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuMergeSortActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuMergeSortActionPerformed
+
+    private void MenuQScMedianade3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuQScMedianade3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuQScMedianade3ActionPerformed
+
+    private void MenuQuickSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuQuickSortActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuQuickSortActionPerformed
+
+    private void MenuSelectionSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSelectionSortActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuSelectionSortActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Algoritmos;

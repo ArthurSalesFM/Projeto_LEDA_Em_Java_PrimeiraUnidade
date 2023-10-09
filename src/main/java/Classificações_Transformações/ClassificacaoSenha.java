@@ -6,8 +6,7 @@ import java.util.Arrays;
  *
  * @author Arthur Felipe MS
  */
-public class ClassificacaoSenha {
-    
+public class ClassificacaoSenha {    
     
     public ClassificacaoSenha(){    
     }
@@ -24,10 +23,14 @@ public class ClassificacaoSenha {
             
             int totalVetor = partes.length - 1;            
             
-            if( partes[totalVetor].equals("Boa") || partes[totalVetor].equals("Muito Boa")){
+            if( partes[totalVetor].equals("Boa") ){
                 vetorComAsSenhas[posicaoDeParadaNoVetor] = vetor[x];
                 posicaoDeParadaNoVetor++;
-            }            
+            }
+            else if(partes[totalVetor].equals("Muito Boa")){
+                vetorComAsSenhas[posicaoDeParadaNoVetor] = vetor[x];
+                posicaoDeParadaNoVetor++;
+            }
         }
         
         for(int i = 0; i < vetor.length; i++){
@@ -40,40 +43,39 @@ public class ClassificacaoSenha {
     }
     
     public String[] calssificaSenha(String vetor[]){        
-        String novaColuna = "";        
+        String novaColuna = ""; 
+        String[] partes;
         
         for (int i = 0; i < vetor.length; i++) {
-            String[] partes = vetor[i].split(",");
+            partes = vetor[i].split(",");
+            
+            if(partes.length > 4){                
+                String senhaModificada = "";
+                
+                for(int j = 1; j < partes.length - 2; j++){                   
+                    if(j == (partes.length - 2) - 1){
+                       senhaModificada +=  partes[j];                       
+                    }
+                    else{
+                        senhaModificada +=  partes[j] + ".";
+                    }                    
+                }
+                vetor[i] = partes[0] + "," + senhaModificada + "," + partes[partes.length - 2] + "," + partes[partes.length - 1];
+            }
+            
+            partes = vetor[i].split(",");            
             
             if(i == 0){
                 String linhaModificada = vetor[i] + "," + "class";
                 vetor[i] = linhaModificada;
             }
             else{
-                
-                int ondeComecaAsSenhas = 1;
-                int ondeTermina = partes.length - 3; 
-                
-                if(partes.length > 4){               
-                    
-                    for(int x = ondeComecaAsSenhas ; x < ondeTermina; x++){
-                        novaColuna += partes[x] + ",";                             
-                    }
-                    
-                    novaColuna = classificacao(novaColuna);
-                    String linhaModificada = vetor[i] + "," + novaColuna;
-                    vetor[i] = linhaModificada;
-                    novaColuna = "";
-                }
-                else{
-                    novaColuna = classificacao(partes[1]);
-                    String linhaModificada = vetor[i] + "," + novaColuna;
-                    vetor[i] = linhaModificada;
-                    novaColuna = "";
-                }
-            }            
-        }
-        
+                novaColuna = classificacao(partes[1]);
+                String linhaModificada = vetor[i] + "," + novaColuna;
+                vetor[i] = linhaModificada;
+                novaColuna = "";
+            }                        
+        }        
         return vetor;
     }
     

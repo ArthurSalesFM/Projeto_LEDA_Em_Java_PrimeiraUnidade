@@ -1,7 +1,6 @@
 package AlgoritmosDeOrdenação;
 
 import Interfaces.I_Ordenacao;
-import java.math.BigDecimal;
 
 /**
  *
@@ -9,8 +8,7 @@ import java.math.BigDecimal;
  */
 public class InsertionSort implements I_Ordenacao{
 
-    public InsertionSort(){
-        
+    public InsertionSort(){        
     }
 
    @Override
@@ -44,12 +42,10 @@ public class InsertionSort implements I_Ordenacao{
                             }
                         } 
                         catch (NumberFormatException e) {
-                            System.err.println("Erro ao converter valores: " + e.getMessage());
                             e.printStackTrace();
                         }
                     } 
                     else {
-                        System.err.println("Linha sem coluna de ordenação válida.");
                         break;
                     }
                 }
@@ -68,12 +64,10 @@ public class InsertionSort implements I_Ordenacao{
                             }
                         } 
                         catch (NumberFormatException e) {
-                            System.err.println("Erro ao converter valores: " + e.getMessage());
                             e.printStackTrace();
                         }
                     } 
                     else {
-                        System.err.println("Linha sem coluna de ordenação válida.");
                         break;
                     }                   
                 }               
@@ -114,12 +108,10 @@ public class InsertionSort implements I_Ordenacao{
                             }
                         } 
                         catch (NumberFormatException e) {
-                            System.err.println("Erro ao converter valores: " + e.getMessage());
                             e.printStackTrace();
                         }
                     } 
                     else {
-                        System.err.println("Linha sem coluna de ordenação válida.");
                         break;
                     }
                 }
@@ -138,12 +130,10 @@ public class InsertionSort implements I_Ordenacao{
                             }
                         } 
                         catch (NumberFormatException e) {
-                            System.err.println("Erro ao converter valores: " + e.getMessage());
                             e.printStackTrace();
                         }
                     } 
                     else {
-                        System.err.println("Linha sem coluna de ordenação válida.");
                         break;
                     }                   
                 }               
@@ -182,12 +172,10 @@ public class InsertionSort implements I_Ordenacao{
                         }
                     } 
                     catch (NumberFormatException e) {
-                        System.err.println("Erro ao converter valores: " + e.getMessage());
                         e.printStackTrace();
                     }
                 } 
                 else {
-                    System.err.println("Linha sem coluna de ordenação válida.");
                     break;
                 }
             }
@@ -226,12 +214,10 @@ public class InsertionSort implements I_Ordenacao{
                         }
                     } 
                     catch (NumberFormatException e) {
-                        System.err.println("Erro ao converter valores: " + e.getMessage());
                         e.printStackTrace();
                     }
                 } 
                 else {
-                    System.err.println("Linha sem coluna de ordenação válida.");
                     break;
                 }
             }

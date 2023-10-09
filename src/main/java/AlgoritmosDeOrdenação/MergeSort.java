@@ -277,6 +277,5 @@ public class MergeSort implements I_Ordenacao{
 
         System.arraycopy(novoVetor, 0, vetor, inicio, novoVetor.length);
     }  
-    
-    
+        
 }

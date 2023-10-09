@@ -22,28 +22,27 @@ public class HeapSort implements I_Ordenacao{
 
     @Override
     public String[] ordenacaoMedioMelhorCasoCampoMes(String[] vetor, int colunaOrdenacao) {
-        //heapSortMes(vetor, 1);
+        heapSortMes(vetor, 1);
         return vetor;
     }
 
     @Override
     public String[] ordenacaoPiorCasoCampoMes(String[] vetor, int colunaOrdenacao) {
-        //heapSortMes(vetor, 2);
+        heapSortMes(vetor, 2);
         return vetor;
     }
 
     @Override
     public String[] ordenacaoMedioMelhorCasoCampoData(String[] vetor, int colunaOrdenacao) {
-        //heapSortData(vetor, 1);
+        heapSortData(vetor, 1);
         return vetor;
     }
 
     @Override
     public String[] ordenacaoPiorCasoCampoData(String[] vetor, int colunaOrdenacao) {
-        //heapSortData(vetor, 2);
+        heapSortData(vetor, 2);
         return vetor;
-    }
-    
+    }    
     
     private void heapSortLength(String[] vetor, int tipo) {
         int n = vetor.length;
@@ -82,8 +81,7 @@ public class HeapSort implements I_Ordenacao{
             heapifyLength(vetor, n, maior, tipo);
         }
     }
-    
-    
+        
     private int compareLength(String a, String b, int tipo) {
         String[] partesDataA = a.split(",");
         String[] partesDataB = b.split(",");
@@ -115,8 +113,7 @@ public class HeapSort implements I_Ordenacao{
             }
         }
     }
-    
-     /*
+        
     private void heapSortMes(String[] vetor, int tipo) {
         int n = vetor.length;
 
@@ -190,9 +187,6 @@ public class HeapSort implements I_Ordenacao{
         }
     }
     
-    
-    
-   
     private void heapSortData(String[] vetor, int tipo) {
         int n = vetor.length;
 
@@ -276,5 +270,5 @@ public class HeapSort implements I_Ordenacao{
             }
         }
     }
-    */
+    
 }

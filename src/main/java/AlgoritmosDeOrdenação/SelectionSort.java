@@ -328,8 +328,7 @@ public class SelectionSort implements I_Ordenacao{
     }
 
     @Override
-    public String[] ordenacaoPiorCasoCampoData(String[] vetor, int colunaOrdenacao) {
-        
+    public String[] ordenacaoPiorCasoCampoData(String[] vetor, int colunaOrdenacao) {        
         int n = vetor.length;
 
         for (int i = 1; i < n - 1; i++) {
@@ -422,8 +421,7 @@ public class SelectionSort implements I_Ordenacao{
                 vetor[indiceMinimo] = temp;
             }
         }
-        return vetor;
-    
+        return vetor;    
     }
 
 }

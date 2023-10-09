@@ -11,8 +11,8 @@ public class Main {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaPrincipal().setVisible(true);
-                //Mudar depois para TelaPrincipal || JanelaTeste para testes
+                //Mudar depois para TelaPrincipalasdasd || JanelaTeste para testes
             }
-        });
+        });       
     }
 }
