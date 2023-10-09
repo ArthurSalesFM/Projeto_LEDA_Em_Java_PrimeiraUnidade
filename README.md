@@ -10,11 +10,12 @@
 * *JAVA _version "19.0.1" 2022-10-18_*
 
 ## **Como execultar o programa?**
-* Insira o arquivo (**passwords.csv**) no diretório do projeto: src/main/java/**ArquivoBaseCSV**.
+
+* Insira o arquivo (**passwords.csv**) no diretório do projeto: src/main/java/**ArquivoBaseCSV**. No mesmo local onde deverá ser inserido o arquivo, após a realização de pelo menos 1 (um) teste, os novos arquivos devem ser criados lá!
+
 * Sem esse arquivo, o programa não irá seguir as tarefas de criação/ordenação dos arquivos.
 * Execute a classe **Main** que está na pasta /src/main/**java**.
-* Para parar o processo click no botão **Encerrar processo**.
-* Após concluir todo o processo, o click no botão **Gerar Relatório**, e uma janela deverá mostrar o relatório pronto.
+* Após concluir todo o processo, o click no botão **Gerar Relatório**, e uma janela deverá mostrar um relatório básico.
 
 
 ##
