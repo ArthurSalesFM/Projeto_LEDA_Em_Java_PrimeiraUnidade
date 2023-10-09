@@ -26,7 +26,6 @@ public class TelaSecundaria extends javax.swing.JFrame{
         SaidaDasInformacoes.setEditable(false);
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     
-        // Adicionar um WindowListener para detectar quando a janela secundária é fechada
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -35,8 +34,7 @@ public class TelaSecundaria extends javax.swing.JFrame{
         });
     }
   
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    @SuppressWarnings("unchecked")                          
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
