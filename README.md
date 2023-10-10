@@ -9,6 +9,8 @@
 #### Tecnologias Utilizadas
 * *JAVA _version "19.0.1" 2022-10-18_*
 
+## Projeto final se encontra na branch ProjetoFinalInicial, então navegue a até a branch citada, e entre na mesma, lá conterá o projeto e o milestone. Essa é apenas a branch do projeto, porém na útilma branch que se encontra o projeto finalizado.
+
 ## **Como execultar o programa?**
 * Insira o arquivo (**passwords.csv**) no diretório do projeto: src/main/java/**ArquivoBaseCSV**.
 * Sem esse arquivo, o programa não irá seguir as tarefas de criação/ordenação dos arquivos.
