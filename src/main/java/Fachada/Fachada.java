@@ -73,71 +73,71 @@ public class Fachada {
                     double tempoTotal = 0;
                     
                     doc.insertString(doc.getLength(), " ========================================INICIANDO O PROCESSO======================================== \n\n\n", null);                   
-                    Thread.sleep(3000);         
+                    //Thread.sleep(3000);         
                     
                     
                     doc.insertString(doc.getLength(), " =========================================Classificação das Senha======================================== \n\n", null);
-                    Thread.sleep(1000);
+                    //Thread.sleep(1000);
                     
                     doc.insertString(doc.getLength(), "Lendo arquivo : " + nomeDoArquivo, null); 
                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                    Thread.sleep(1000);                                        
+                    //Thread.sleep(1000);                                        
                                        
                     doc.insertString(doc.getLength(), "\n\nClassificando as Senhas.", null); 
                     dados = classificacaoSenhas.calssificaSenha(dados);
                     doc.insertString(doc.getLength(), "\nCassificação das senhas realizada.", null);
-                    Thread.sleep(1000);                    
+                    //Thread.sleep(1000);                    
                     
                     nomeDoArquivo = "password_classifier.csv";
                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!" + nomeDoArquivo, null);
-                    Thread.sleep(3000);
+                    //Thread.sleep(3000);
                     
                     
                     
                     doc.insertString(doc.getLength(), "\n\n\n ======================================Transformações do Campo DATA===================================== \n\n", null);
-                    Thread.sleep(1000);
+                    //Thread.sleep(1000);
                     
                     doc.insertString(doc.getLength(), "Lendo arquivo : " + nomeDoArquivo, null); 
                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                    Thread.sleep(2000);
+                    //Thread.sleep(2000);
                     
                     
                     doc.insertString(doc.getLength(), "\n\nRealizando as transformações.", null); 
                     dados = transformacoes.transformaData(dados);
                     doc.insertString(doc.getLength(), "\nTransformações Realizada com Sucesso!", null);
-                    Thread.sleep(2000);
+                    //Thread.sleep(2000);
                     
                     nomeDoArquivo = "passwords_formated_data.csv";
                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                    Thread.sleep(3000);
+                    //Thread.sleep(3000);
                     
                     
                     
                     doc.insertString(doc.getLength(), "\n\n\n =====================================Filtrando Senhas Boa e Muito Boa==================================== \n\n", null);
-                    Thread.sleep(1000);
+                    //Thread.sleep(1000);
                     
                     doc.insertString(doc.getLength(), "Lendo arquivo : " + nomeDoArquivo, null); 
                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                    Thread.sleep(2000);
+                    //Thread.sleep(2000);
                     
                     
                     doc.insertString(doc.getLength(), "\n\nRealizando a filtragem das Senhas.", null); 
                     dados = classificacaoSenhas.buscaSenhaBoaEMuitoBoa(dados);
                     doc.insertString(doc.getLength(), "\nFiltragem Realizada com Sucesso!", null);
-                    Thread.sleep(2000);
+                    //Thread.sleep(2000);
                     
                     nomeDoArquivo = "passwords_classifier.csv";
                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                    Thread.sleep(3000);
+                    //Thread.sleep(3000);
                     
                     
                     doc.insertString(doc.getLength(), "\n\n\n =========================================Iniciando as Ordenações========================================", null);
@@ -178,7 +178,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -187,13 +187,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_selectionSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 1){
@@ -203,7 +203,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -212,13 +212,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_selectionSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else if(coluna == 2){
@@ -228,7 +228,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -237,13 +237,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_selectionSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                    //Thread.sleep(2000);                                 
                                 }                                                             
                                 else if(coluna == 3){
                                     
@@ -252,7 +252,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -261,13 +261,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_selectionSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 4){
@@ -277,7 +277,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -286,13 +286,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_selectionSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else if(coluna == 5){
@@ -302,7 +302,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -311,13 +311,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_selectionSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                    //Thread.sleep(2000);                                 
                                 }
                                 else if(coluna == 6){
                                     
@@ -326,7 +326,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -335,13 +335,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_selectionSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 7){
@@ -351,7 +351,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -360,13 +360,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_selectionSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else{
@@ -376,7 +376,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -385,13 +385,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_selectionSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                    //Thread.sleep(2000);                                 
                                 }
                             }                            
                             
@@ -405,7 +405,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -414,13 +414,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_insertionSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 1){
@@ -430,7 +430,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -439,13 +439,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_insertionSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else if(coluna == 2){
@@ -455,7 +455,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -464,13 +464,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_insertionSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                    //Thread.sleep(2000);                                 
                                 }                                                             
                                 else if(coluna == 3){
                                     
@@ -479,7 +479,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -488,13 +488,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_insertionSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 4){
@@ -504,7 +504,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -513,13 +513,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_insertionSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else if(coluna == 5){
@@ -529,7 +529,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -538,13 +538,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_insertionSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                    //Thread.sleep(2000);                                 
                                 }
                                 else if(coluna == 6){
                                     
@@ -553,7 +553,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -562,13 +562,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_insertionSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 7){
@@ -578,7 +578,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -587,13 +587,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_insertionSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else{
@@ -603,7 +603,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -612,13 +612,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_insertionSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                    //Thread.sleep(2000);                                 
                                 }
                             }
                                                         
@@ -632,7 +632,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -641,13 +641,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_mergeSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 1){
@@ -657,7 +657,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -666,13 +666,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_mergeSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else if(coluna == 2){
@@ -682,7 +682,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -691,13 +691,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_mergeSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                    //Thread.sleep(2000);                                 
                                 }                                                             
                                 else if(coluna == 3){
                                     
@@ -706,7 +706,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -715,13 +715,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_mergeSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 4){
@@ -731,7 +731,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -740,13 +740,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_mergeSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    //Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else if(coluna == 5){
@@ -756,7 +756,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -765,13 +765,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                    //Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_mergeSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                    //Thread.sleep(2000);                                 
                                 }
                                 else if(coluna == 6){
                                     
@@ -780,7 +780,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                   // Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -789,13 +789,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                  //  Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_mergeSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                   // Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 7){
@@ -805,7 +805,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -814,13 +814,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                   // Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_mergeSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                 //   Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else{
@@ -830,7 +830,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                  ///  Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -839,13 +839,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_mergeSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                 //   Thread.sleep(2000);                                 
                                 }
                             }
                             
@@ -859,7 +859,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                  //  Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -868,13 +868,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_quickSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                   // Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 1){
@@ -884,7 +884,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                 //   Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -893,13 +893,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_quickSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                    // Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else if(coluna == 2){
@@ -909,7 +909,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                    //Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -918,13 +918,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                   // Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_quickSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                   // Thread.sleep(2000);                                 
                                 }                                                             
                                 else if(coluna == 3){
                                     
@@ -933,7 +933,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                  //  Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -942,13 +942,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_quickSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                  //  Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 4){
@@ -958,7 +958,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                //    Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -967,13 +967,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_quickSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                 //   Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else if(coluna == 5){
@@ -983,7 +983,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                 //   Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -992,13 +992,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_quickSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                   // Thread.sleep(2000);                                 
                                 }
                                 else if(coluna == 6){
                                     
@@ -1007,7 +1007,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                //    Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1016,13 +1016,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                //    Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_quickSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                              //      Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 7){
@@ -1032,7 +1032,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                             //       Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1041,13 +1041,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                              //      Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_quickSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                //    Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else{
@@ -1057,7 +1057,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                //    Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1066,13 +1066,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                //    Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_quickSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                  //  Thread.sleep(2000);                                 
                                 }
                             }
                         
@@ -1086,7 +1086,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                   // Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1095,13 +1095,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                  //  Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_quickCM3Sort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                   // Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 1){
@@ -1111,7 +1111,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                   // Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1120,13 +1120,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                   // Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_quickCM3Sort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                  //  Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else if(coluna == 2){
@@ -1136,7 +1136,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                   // Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1145,13 +1145,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                   // Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_quickCM3Sort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                   // Thread.sleep(2000);                                 
                                 }                                                             
                                 else if(coluna == 3){
                                     
@@ -1160,7 +1160,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                  //  Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1169,13 +1169,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_quickCM3Sort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                  //  Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 4){
@@ -1185,7 +1185,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                   // Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1194,13 +1194,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_quickCM3Sort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                  //  Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else if(coluna == 5){
@@ -1210,7 +1210,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                //    Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1219,13 +1219,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                              //      Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_quickCM3Sort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                             //       Thread.sleep(2000);                                 
                                 }
                                 else if(coluna == 6){
                                     
@@ -1234,7 +1234,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                //    Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1243,13 +1243,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                //    Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_quickCM3Sort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                //    Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 7){
@@ -1259,7 +1259,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                 //   Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1268,13 +1268,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                  //  Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_quickCM3Sort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                  //  Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else{
@@ -1284,7 +1284,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                   // Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1293,13 +1293,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_quickCM3Sort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                  //  Thread.sleep(2000);                                 
                                 }
                             }
                             
@@ -1313,7 +1313,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                   // Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1322,13 +1322,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                  //  Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_countingSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                   // Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 1){
@@ -1338,7 +1338,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                  //  Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1347,13 +1347,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                //    Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_countingSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                //    Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else if(coluna == 2){
@@ -1363,7 +1363,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                //    Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1372,13 +1372,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                               //     Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_countingSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                 //   Thread.sleep(2000);                                 
                                 }                                                             
                                 else if(coluna == 3){
                                     
@@ -1387,7 +1387,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                 //   Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1396,13 +1396,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_countingSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                 //   Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 4){
@@ -1412,7 +1412,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                 //   Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1421,13 +1421,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                               //     Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_countingSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                //    Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else if(coluna == 5){
@@ -1437,7 +1437,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                  //  Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1446,13 +1446,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_countingSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                //    Thread.sleep(2000);                                 
                                 }
                                 else if(coluna == 6){
                                     
@@ -1461,7 +1461,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                  //  Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1470,13 +1470,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_countingSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                  //  Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 7){
@@ -1486,7 +1486,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                  //  Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1495,13 +1495,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                  //  Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_countingSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                 //   Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else{
@@ -1511,7 +1511,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                 //   Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1520,13 +1520,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                //    Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_countingSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                //    Thread.sleep(2000);                                 
                                 }
                             }
                             
@@ -1539,7 +1539,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                  //  Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1548,13 +1548,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_heapSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                   // Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 1){
@@ -1564,7 +1564,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                  //  Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1573,13 +1573,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_heapSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                  //  Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else if(coluna == 2){
@@ -1589,7 +1589,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                  //  Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo LENGTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1598,13 +1598,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_length_heapSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                 //   Thread.sleep(2000);                                 
                                 }                                                             
                                 else if(coluna == 3){
                                     
@@ -1613,7 +1613,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                 //   Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1622,13 +1622,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_heapSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                  //  Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 4){
@@ -1638,7 +1638,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                  //  Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1647,13 +1647,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                  //  Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_heapSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                  //  Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else if(coluna == 5){
@@ -1663,7 +1663,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                  //  Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo MONTH.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1672,13 +1672,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                   // Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_month_heapSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                  //  Thread.sleep(2000);                                 
                                 }
                                 else if(coluna == 6){
                                     
@@ -1687,7 +1687,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                   // Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MÉDIO CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1696,13 +1696,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_heapSort_medioCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                  //  Thread.sleep(2000);
                                     //=================================================================================================================
                                 }
                                 else if(coluna == 7){
@@ -1712,7 +1712,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                //    Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação MELHOR CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1721,13 +1721,13 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                 //   Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_heapSort_melhorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);
+                                  //  Thread.sleep(2000);
                                     //=================================================================================================================                                    
                                 }
                                 else{
@@ -1737,7 +1737,7 @@ public class Fachada {
                                     doc.insertString(doc.getLength(), "\n\nLendo arquivo : " + nomeDoArquivo, null); 
                                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
-                                    Thread.sleep(1000);                                        
+                                   // Thread.sleep(1000);                                        
                                        
                                     doc.insertString(doc.getLength(), "\n\nOrdenação PIOR CASO, campo DATA.", null); 
                                     tempoInicial =  System.nanoTime();
@@ -1746,20 +1746,20 @@ public class Fachada {
                                     tempoTotal = (tempoFinal - tempoInicial) / 1e9;
                                     matriz.inserirValoresNaMatriz(tempoTotal, linha, coluna);
                                     doc.insertString(doc.getLength(), "\nOrdenação realizada!", null);
-                                    Thread.sleep(1000);                    
+                                  //  Thread.sleep(1000);                    
                     
                                     nomeDoArquivo = "passwords_data_heapSort_piorCaso.csv";
                                     doc.insertString(doc.getLength(), "\n\nCriando o Arquivo : " + nomeDoArquivo, null); 
                                     arquivoCSV.criarArquivoCSV(nomeDoArquivo, dados);
                                     doc.insertString(doc.getLength(), "\nArquivo criado com Sucesso!", null);
-                                    Thread.sleep(2000);                                 
+                                 //   Thread.sleep(2000);                                 
                                 }
                             }
                         }                   
                     }
                     
                     doc.insertString(doc.getLength(), "\n\n\n =========================================PROCESSO CONCLUÍDO========================================\n", null);
-                    Thread.sleep(1000);
+                    //Thread.sleep(1000);
                                         
                     //BotaoIniciar.setEnabled(true);
                     GerarRelatorio.setEnabled(true);
