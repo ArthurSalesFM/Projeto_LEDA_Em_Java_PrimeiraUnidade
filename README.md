@@ -15,7 +15,6 @@
 * Insira o arquivo (**passwords.csv**) no diretório do projeto: src/main/java/**ArquivoBaseCSV**.
 * Sem esse arquivo, o programa não irá seguir as tarefas de criação/ordenação dos arquivos.
 * Execute a classe **Main** que está na pasta /src/main/**java**.
-* Para parar o processo click no botão **Encerrar processo**.
 * Após concluir todo o processo, o click no botão **Gerar Relatório**, e uma janela deverá mostrar o relatório pronto.
 
 
