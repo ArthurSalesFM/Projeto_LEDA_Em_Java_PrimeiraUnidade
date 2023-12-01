@@ -11,7 +11,7 @@
 
 ## **Como execultar o programa?**
 
-## Projeto final se encontra na branch EstruturasDeDados, então navegue a até a branch citada, e entre na mesma, lá conterá o projeto e o milestone, é só baixar/clonar o repositório e executar normalmente o Main. Essa é apenas a branch do projeto, porém na útilma branch que se encontra o projeto finalizado, tanto a parte da 1ª Unidade(Ordenações) quanto da 2ª Unidade(Estruturas de Dados).
+## Projeto final se encontra na branch *EstruturasDeDados*, então navegue a até a branch citada, e entre na mesma, lá conterá o projeto e o milestone, é só baixar/clonar o repositório e executar normalmente o Main. Essa é apenas a branch do projeto, porém na útilma branch que se encontra o projeto finalizado, tanto a parte da 1ª Unidade(Ordenações) quanto da 2ª Unidade(Estruturas de Dados).
 
 * Insira o arquivo (**passwords.csv**) no diretório do projeto: src/main/java/**ArquivoBaseCSV**. No mesmo local onde deverá ser inserido o arquivo, após a realização de pelo menos 1 (um) teste, os novos arquivos devem ser criados lá!
 
