@@ -19,7 +19,7 @@
 
 
 ##
-## Informações gerais do Projeto da Disciplina
+## Informações gerais do Projeto da Disciplina SOBRE ORDENAÇÕES 1º Unidade.
 
 **Análise comparativa de algoritmos de ordenação**
 
