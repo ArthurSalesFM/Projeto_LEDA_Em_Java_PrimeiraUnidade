@@ -1,5 +1,5 @@
 
-# Projeto sobre algoritmos de ordenação em JAVA para a disciplina LEDA-UEPB
+# Projeto sobre algoritmos de ordenação e Estruturas de dados em JAVA para a disciplina LEDA-UEPB
 
 **Desenvolvido por** *Arthur Felipe Muniz Sales*
 
