@@ -11,6 +11,8 @@
 
 ## **Como execultar o programa?**
 
+## Projeto final se encontra na branch ProjetoFinalInicial, então navegue a até a branch citada, e entre na mesma, lá conterá o projeto e o milestone, é só baixar/clonar o repositório e executar normalmente o Main. Essa é apenas a branch do projeto, porém na útilma branch que se encontra o projeto finalizado, tanto a parte da 1ª Unidade(Ordenações) quanto da 2ª Unidade(Estruturas de Dados).
+
 * Insira o arquivo (**passwords.csv**) no diretório do projeto: src/main/java/**ArquivoBaseCSV**. No mesmo local onde deverá ser inserido o arquivo, após a realização de pelo menos 1 (um) teste, os novos arquivos devem ser criados lá!
 
 * Sem esse arquivo, o programa não irá seguir as tarefas de criação/ordenação dos arquivos.
@@ -31,13 +33,13 @@ C. [Base de dados dos 10k passwords mais comuns utilizados]()
 D. [Lost Angeles Metro Bike Share]()
 
 
-ATENÇÃO: VOCÊS DEVEM APLICAR 3 ESTRUTURAS DE DADOS EM SEUS PROJETOS E JUSTIFICAR O MOTIVO DE ESTAREM APLICANDO.
+**ATENÇÃO: VOCÊS DEVEM APLICAR 3 ESTRUTURAS DE DADOS EM SEUS PROJETOS E JUSTIFICAR O MOTIVO DE ESTAREM APLICANDO.**
  
 
 Entrega deste milestone:
 
-Entrega de um relatório descrevendo as alterações realizadas no projeto. (Equivale a 40% da nota)
-Você deve subir o projeto no GitHub e mandar o link do projeto e o link de uma versão para eu baixar no meu computador e executar com todas as instruções (arquivo readme). (Equivale a 60% da nota)
+* Entrega de um relatório descrevendo as alterações realizadas no projeto. (Equivale a 40% da nota)
+* Você deve subir o projeto no GitHub e mandar o link do projeto e o link de uma versão para eu baixar no meu computador e executar com todas as instruções (arquivo readme). (Equivale a 60% da nota)
 
 ##
 ## Informações gerais do Projeto da Disciplina SOBRE ORDENAÇÕES 1º Unidade.
