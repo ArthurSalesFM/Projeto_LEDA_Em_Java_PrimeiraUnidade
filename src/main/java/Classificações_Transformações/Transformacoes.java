@@ -1,5 +1,7 @@
 package Classificações_Transformações;
 
+import EstruturasDeDados.Fila;
+
 /**
  *
  * @author Arthur Felipe MS
@@ -11,19 +13,34 @@ public class Transformacoes {
     }
     
     public String[] transformaData(String vetor[]){        
-        String dataModificada = "";       
+        Fila fila = new Fila();
         
         for (int x = 1; x < vetor.length; x++) {            
-            
-            String[] partesDaLinha = vetor[x].split(",");            
+            fila.enfileirar(vetor[x]); 
+        }
+        
+        realizarTransformacoes(fila);        
+        return fila.paraArray();
+    }
+    
+    private void realizarTransformacoes(Fila fila) {
+        Fila filaTransformada = new Fila(); 
+        
+        while (!fila.estaVazia()) {
+            String linha = fila.desenfileirar(); 
+           
+            String[] partesDaLinha = linha.split(",");            
             String dataHora[] = partesDaLinha[partesDaLinha.length - 2].split(" ");            
             String data[] = dataHora[0].split("-");
             
-            dataModificada =  partesDaLinha[0] + "," + partesDaLinha[1] + "," + partesDaLinha[2]  + "," + data[2] + "/" + data[1] + "/" + data[0] + "," + partesDaLinha[4];
+            String dataModificada = partesDaLinha[0] + "," + partesDaLinha[1] + "," + partesDaLinha[2]  + "," + data[2] + "/" + data[1] + "/" + data[0] + "," + partesDaLinha[4];
                         
-            vetor[x] = dataModificada;
+            filaTransformada.enfileirar(dataModificada);
         }
-        return vetor;
+        
+        while (!filaTransformada.estaVazia()) {
+            fila.enfileirar(filaTransformada.desenfileirar());
+        }
     }
-
+   
 }

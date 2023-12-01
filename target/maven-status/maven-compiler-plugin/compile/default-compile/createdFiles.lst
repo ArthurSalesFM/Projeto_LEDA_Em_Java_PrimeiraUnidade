@@ -4,8 +4,10 @@ Classificações_Transformações\ClassificacaoSenha.class
 Classificações_Transformações\Transformacoes.class
 CSV\ArquivoCSV.class
 Telas\TelaPrincipal$7.class
+EstruturasDeDados\Fila.class
 Fachada\Fachada$1.class
 Telas\TelaSecundaria.class
+EstruturasDeDados\ListaEncadeada.class
 Main$1.class
 Telas\TelaPrincipal$2.class
 Main.class
@@ -19,12 +21,14 @@ AlgoritmosDeOrdenação\CountingSort.class
 AlgoritmosDeOrdenação\QuickSort.class
 DadosDasOrdenacoes\MatrizDosDados.class
 Telas\TelaPrincipal$1.class
+EstruturasDeDados\HashMap.class
 AlgoritmosDeOrdenação\SelectionSort.class
 Telas\TelaPrincipal$9.class
 Telas\TelaPrincipal.class
 AlgoritmosDeOrdenação\MergeSort.class
 AlgoritmosDeOrdenação\InsertionSort.class
 InfoSistema\InfoDoSistema.class
+EstruturasDeDados\No.class
 Telas\TelaPrincipal$10.class
 AlgoritmosDeOrdenação\HeapSort.class
 Telas\TelaPrincipal$12.class

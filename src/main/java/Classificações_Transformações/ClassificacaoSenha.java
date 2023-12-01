@@ -1,16 +1,45 @@
 package Classificações_Transformações;
 
-import java.util.Arrays;
+import EstruturasDeDados.HashMap;
 
 /**
  *
  * @author Arthur Felipe MS
  */
-public class ClassificacaoSenha {    
+public class ClassificacaoSenha {
     
-    public ClassificacaoSenha(){    
+    public ClassificacaoSenha(){
+        
+    }    
+    
+    public String[] buscaSenhaBoaEMuitoBoa(String vetor[]){
+        HashMap hashSenhas = new HashMap();
+
+        for (String senha : vetor) {
+            String partes[] = senha.split(",");
+            String status = partes[partes.length - 1];
+
+            if (status.equals("Boa") || status.equals("Muito Boa")) {
+                hashSenhas.put(status, senha);
+            }
+        }
+
+        String[] senhasBoasEMuitoBoas = new String[hashSenhas.tamanho()];
+        int index = 0;
+
+        for (int i = 0; i < hashSenhas.tabela.length; i++) {
+            String[] senhas = hashSenhas.tabela[i].paraArray();
+            for (String senha : senhas) {
+                senhasBoasEMuitoBoas[index++] = senha;
+            }
+        }
+
+        return senhasBoasEMuitoBoas;
     }
+
     
+    
+    /*
     public String[] buscaSenhaBoaEMuitoBoa(String vetor[]){
         
         int posicaoDeParadaNoVetor = 1;        
@@ -40,9 +69,9 @@ public class ClassificacaoSenha {
         vetor = Arrays.copyOf(vetorComAsSenhas, vetorComAsSenhas.length);      
         
         return vetor;
-    }
+    }*/
     
-    public String[] calssificaSenha(String vetor[]){
+    public String[] classificaSenha(String vetor[]){
         String novaColuna = ""; 
         String[] partes;
         

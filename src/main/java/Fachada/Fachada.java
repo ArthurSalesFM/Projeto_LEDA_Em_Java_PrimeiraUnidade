@@ -83,9 +83,9 @@ public class Fachada {
                     dados = arquivoCSV.lerArquivoCSV(nomeDoArquivo);
                     doc.insertString(doc.getLength(), "\nLeitura Realizada com Sucesso!", null);
                     //Thread.sleep(1000);                                        
-                                       
+                    
                     doc.insertString(doc.getLength(), "\n\nClassificando as Senhas.", null); 
-                    dados = classificacaoSenhas.calssificaSenha(dados);
+                    dados = classificacaoSenhas.classificaSenha(dados);
                     doc.insertString(doc.getLength(), "\nCassificação das senhas realizada.", null);
                     //Thread.sleep(1000);                    
                     
