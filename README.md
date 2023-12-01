@@ -1,5 +1,5 @@
 
-# Projeto sobre algoritmos de ordenação em JAVA para a disciplina LEDA-UEPB
+# Projeto sobre algoritmos de ordenação e Estruturas de dados em JAVA para a disciplina LEDA-UEPB
 
 **Desenvolvido por** *Arthur Felipe Muniz Sales*
 
@@ -9,17 +9,40 @@
 #### Tecnologias Utilizadas
 * *JAVA _version "19.0.1" 2022-10-18_*
 
-## Projeto final se encontra na branch ProjetoFinalInicial, então navegue a até a branch citada, e entre na mesma, lá conterá o projeto e o milestone, é só baixar/clonar o repositório e executar normalmente o Main. Essa é apenas a branch do projeto, porém na útilma branch que se encontra o projeto finalizado.
-
 ## **Como execultar o programa?**
-* Insira o arquivo (**passwords.csv**) no diretório do projeto: src/main/java/**ArquivoBaseCSV**.
+
+## Projeto final se encontra na branch ProjetoFinalInicial, então navegue a até a branch citada, e entre na mesma, lá conterá o projeto e o milestone, é só baixar/clonar o repositório e executar normalmente o Main. Essa é apenas a branch do projeto, porém na útilma branch que se encontra o projeto finalizado, tanto a parte da 1ª Unidade(Ordenações) quanto da 2ª Unidade(Estruturas de Dados).
+
+* Insira o arquivo (**passwords.csv**) no diretório do projeto: src/main/java/**ArquivoBaseCSV**. No mesmo local onde deverá ser inserido o arquivo, após a realização de pelo menos 1 (um) teste, os novos arquivos devem ser criados lá!
+
 * Sem esse arquivo, o programa não irá seguir as tarefas de criação/ordenação dos arquivos.
 * Execute a classe **Main** que está na pasta /src/main/**java**.
-* Após concluir todo o processo, o click no botão **Gerar Relatório**, e uma janela deverá mostrar o relatório pronto.
-
+* Após concluir todo o processo, o click no botão **Gerar Relatório**, e uma janela deverá mostrar um relatório básico.
 
 ##
-## Informações gerais do Projeto da Disciplina
+## Alteração dos projetos UT1 para UT2 - SOBRE ESTRUTURAS DE DADOS
+
+O projeto da disciplina de Estrutura de dados visa utilizar os dados de projetos voltados para Data science para estudarmos o desempenho dos algoritmos de ordenação. Os dados foram retirados do site Kaggle através da curadoria realizada pela equipe responsável pelas disciplinas de LEDA e EDA. Os projetos que temos são:
+
+A. [Ligas Européias de Futebol]()
+
+B. [Bolsa de Valores Bovespa 1994-2020]()
+
+C. [Base de dados dos 10k passwords mais comuns utilizados]()
+
+D. [Lost Angeles Metro Bike Share]()
+
+
+**ATENÇÃO: VOCÊS DEVEM APLICAR 3 ESTRUTURAS DE DADOS EM SEUS PROJETOS E JUSTIFICAR O MOTIVO DE ESTAREM APLICANDO.**
+ 
+
+Entrega deste milestone:
+
+* Entrega de um relatório descrevendo as alterações realizadas no projeto. (Equivale a 40% da nota)
+* Você deve subir o projeto no GitHub e mandar o link do projeto e o link de uma versão para eu baixar no meu computador e executar com todas as instruções (arquivo readme). (Equivale a 60% da nota)
+
+##
+## Informações gerais do Projeto da Disciplina SOBRE ORDENAÇÕES 1º Unidade.
 
 **Análise comparativa de algoritmos de ordenação**
 
