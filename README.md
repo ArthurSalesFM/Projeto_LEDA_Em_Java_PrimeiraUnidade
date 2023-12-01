@@ -17,6 +17,27 @@
 * Execute a classe **Main** que está na pasta /src/main/**java**.
 * Após concluir todo o processo, o click no botão **Gerar Relatório**, e uma janela deverá mostrar um relatório básico.
 
+##
+## Alteração dos projetos UT1 para UT2 - SOBRE ESTRUTURAS DE DADOS
+
+O projeto da disciplina de Estrutura de dados visa utilizar os dados de projetos voltados para Data science para estudarmos o desempenho dos algoritmos de ordenação. Os dados foram retirados do site Kaggle através da curadoria realizada pela equipe responsável pelas disciplinas de LEDA e EDA. Os projetos que temos são:
+
+A. [Ligas Européias de Futebol]()
+
+B. [Bolsa de Valores Bovespa 1994-2020]()
+
+C. [Base de dados dos 10k passwords mais comuns utilizados]()
+
+D. [Lost Angeles Metro Bike Share]()
+
+
+ATENÇÃO: VOCÊS DEVEM APLICAR 3 ESTRUTURAS DE DADOS EM SEUS PROJETOS E JUSTIFICAR O MOTIVO DE ESTAREM APLICANDO.
+ 
+
+Entrega deste milestone:
+
+Entrega de um relatório descrevendo as alterações realizadas no projeto. (Equivale a 40% da nota)
+Você deve subir o projeto no GitHub e mandar o link do projeto e o link de uma versão para eu baixar no meu computador e executar com todas as instruções (arquivo readme). (Equivale a 60% da nota)
 
 ##
 ## Informações gerais do Projeto da Disciplina SOBRE ORDENAÇÕES 1º Unidade.
