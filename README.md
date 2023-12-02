@@ -13,6 +13,10 @@
 
 ## Projeto final se encontra na branch EstruturasDeDados, então navegue a até a branch citada, e entre na mesma, lá conterá o projeto e o milestone, é só baixar/clonar o repositório e executar normalmente o Main. Essa é apenas a branch do projeto, porém na útilma branch que se encontra o projeto finalizado, tanto a parte da 1ª Unidade(Ordenações) quanto da 2ª Unidade(Estruturas de Dados).
 
+* O Milestone do projeto da primeira unidade se chama _**milestone-Arthur-FMS-LEDA.pdf**_
+
+* O Milestone do projeto da segunda unidade se chama _**milestone-Arthur-FMS-LEDA-EstruturasDeDados.pdf**_
+
 * Insira o arquivo (**passwords.csv**) no diretório do projeto: src/main/java/**ArquivoBaseCSV**. No mesmo local onde deverá ser inserido o arquivo, após a realização de pelo menos 1 (um) teste, os novos arquivos devem ser criados lá!
 
 * Sem esse arquivo, o programa não irá seguir as tarefas de criação/ordenação dos arquivos.
